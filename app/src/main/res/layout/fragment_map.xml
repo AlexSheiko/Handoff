@@ -13,8 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@null"
-            android:drawableEnd="@drawable/ic_search_black_24dp"
-            android:drawableRight="@drawable/ic_search_black_24dp"
+            android:drawableEnd="@drawable/ic_search_grey_700_24dp"
+            android:drawableRight="@drawable/ic_search_grey_700_24dp"
             android:hint="@string/search_hint"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"/>
