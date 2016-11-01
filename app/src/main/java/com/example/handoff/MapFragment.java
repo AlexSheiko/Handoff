@@ -57,9 +57,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13f));
+        // Add a marker in Israel and move the camera
+        LatLng sydney = new LatLng(32.018765, 34.7413235);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Israel"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17.5f));
     }
 }
