@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTabIcons(TabLayout tabLayout) {
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_map_white_24dp);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_people_outline_white_24dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_people_white_24dp);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_shopping_cart_white_24dp);
-        tabLayout.getTabAt(3).setIcon(R.drawable.ic_list_white_24dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_view_list_white_24dp);
     }
 
 
