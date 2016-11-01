@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+        setTabIcons(tabLayout);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setTabIcons(TabLayout tabLayout) {
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_map_white_24dp);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_people_outline_white_24dp);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_shopping_cart_white_24dp);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_list_white_24dp);
     }
 
 
