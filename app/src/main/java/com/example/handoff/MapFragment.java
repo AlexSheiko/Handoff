@@ -11,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -68,12 +69,19 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     private void addDummyMarkers() {
         LatLng marker1 = new LatLng(22.285752, 114.153876);
-        mMap.addMarker(new MarkerOptions().position(marker1).title("Additional Marker"));
+        mMap.addMarker(new MarkerOptions().position(marker1).title("Additional Marker")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
         LatLng marker2 = new LatLng(22.283837, 114.153856);
-        mMap.addMarker(new MarkerOptions().position(marker2).title("Additional Marker"));
+        mMap.addMarker(new MarkerOptions().position(marker2).title("Additional Marker")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
         LatLng marker3 = new LatLng(22.282815, 114.155760);
-        mMap.addMarker(new MarkerOptions().position(marker3).title("Additional Marker"));
+        mMap.addMarker(new MarkerOptions().position(marker3).title("Additional Marker")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+        LatLng marker4 = new LatLng(22.285253, 114.152930);
+        mMap.addMarker(new MarkerOptions().position(marker4).title("Additional Marker")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
     }
 }
