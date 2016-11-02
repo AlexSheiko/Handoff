@@ -27,7 +27,8 @@
                 android:id="@+id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabTextAppearance="@style/TabText"/>
+                app:tabTextAppearance="@style/TabText"
+                app:tabTextColor="#D1E8BC"/>
 
         </android.support.v7.widget.Toolbar>
 

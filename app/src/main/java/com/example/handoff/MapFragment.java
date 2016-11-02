@@ -44,6 +44,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        getChildFragmentManager().beginTransaction().remove(mapFragment).commit();
+    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
