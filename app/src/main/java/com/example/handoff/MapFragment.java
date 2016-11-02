@@ -56,6 +56,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setBuildingsEnabled(false);
 
         // Add a marker in Hong Kong and move the camera
         LatLng hongKong = new LatLng(22.2847202, 114.153556);
