@@ -35,8 +35,9 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@+id/bottom_sheet"
+        app:layout_anchorGravity="right|end"
         app:srcCompat="@drawable/ic_add_white_24dp"/>
 
     <android.support.v4.widget.NestedScrollView
