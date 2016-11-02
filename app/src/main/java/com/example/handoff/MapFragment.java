@@ -44,14 +44,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mapFragment.getMapAsync(this);
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-                .findFragmentById(R.id.map);
-        getChildFragmentManager().beginTransaction().remove(mapFragment).commit();
-    }
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -66,7 +58,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker in Hong Kong and move the camera
-        LatLng hongKong = new LatLng(22.2846202, 114.152546);
+        LatLng hongKong = new LatLng(22.2847202, 114.153556);
         mMap.addMarker(new MarkerOptions().position(hongKong).title("Marker in Hong Kong"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 17.5f));
     }
