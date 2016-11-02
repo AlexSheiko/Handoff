@@ -62,5 +62,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         LatLng hongKong = new LatLng(22.2847202, 114.153556);
         mMap.addMarker(new MarkerOptions().position(hongKong).title("Marker in Hong Kong"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 18f));
+
+        addDummyMarkers();
+    }
+
+    private void addDummyMarkers() {
+        LatLng marker1 = new LatLng(22.285752, 114.153876);
+        mMap.addMarker(new MarkerOptions().position(marker1).title("Additional Marker"));
+
+        LatLng marker2 = new LatLng(22.283837, 114.153856);
+        mMap.addMarker(new MarkerOptions().position(marker2).title("Additional Marker"));
+
+        LatLng marker3 = new LatLng(22.282815, 114.155760);
+        mMap.addMarker(new MarkerOptions().position(marker3).title("Additional Marker"));
     }
 }
