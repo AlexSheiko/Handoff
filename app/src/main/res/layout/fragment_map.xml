@@ -99,7 +99,7 @@
                         android:id="@+id/titleView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@id/iconContainer"
                         android:text="Marly EXODUS headphones"
                         android:textSize="18sp"/>
@@ -163,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@id/titleView"
                         android:layout_below="@id/dateView"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="20dp"
                         android:text="Pickup: "
                         android:textStyle="bold"/>
 
@@ -182,7 +182,6 @@
                         android:layout_alignLeft="@id/titleView"
                         android:layout_below="@id/pickupHeader"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="4dp"
                         android:text="Handoff: "
                         android:textStyle="bold"/>
 
