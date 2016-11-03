@@ -46,7 +46,8 @@
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:background="#a0000000"
-        android:clipToPadding="true"
+        android:clipToPadding="false"
+        android:paddingBottom="64dp"
         app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
         <LinearLayout
@@ -58,7 +59,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
+                android:paddingBottom="8dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="8dp"
@@ -66,136 +67,11 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp"/>
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <include layout="@layout/item_pickup"/>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp">
+            <include layout="@layout/item_pickup"/>
 
-                    <ImageView
-                        android:id="@+id/iconContainer"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/background_icon"
-                        android:padding="12dp"
-                        android:src="@drawable/ic_shopping_cart_white_24dp"/>
-
-                    <TextView
-                        android:id="@+id/priceView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@id/iconContainer"
-                        android:layout_alignRight="@id/iconContainer"
-                        android:layout_below="@id/iconContainer"
-                        android:layout_marginTop="16dp"
-                        android:gravity="center"
-                        android:text="$12 "
-                        android:textSize="20sp"/>
-
-                    <TextView
-                        android:id="@+id/titleView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_toRightOf="@id/iconContainer"
-                        android:text="Marly EXODUS headphones"
-                        android:textSize="18sp"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/divider_height"
-                        android:layout_alignLeft="@id/titleView"
-                        android:layout_below="@id/titleView"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/dividerColor"/>
-
-                    <TextView
-                        android:id="@+id/dateView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@id/titleView"
-                        android:layout_below="@id/titleView"
-                        android:layout_marginLeft="-2dp"
-                        android:layout_marginTop="16dp"
-                        android:drawableLeft="@drawable/ic_today_grey_500_24dp"
-                        android:drawablePadding="4dp"
-                        android:gravity="center"
-                        android:text="Today"/>
-
-                    <TextView
-                        android:id="@+id/timeView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@id/dateView"
-                        android:layout_marginLeft="16dp"
-                        android:layout_toRightOf="@id/dateView"
-                        android:drawableLeft="@drawable/ic_access_time_grey_500_24dp"
-                        android:drawablePadding="4dp"
-                        android:gravity="center"
-                        android:text="Now"/>
-
-                    <TextView
-                        android:id="@+id/weightView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@id/timeView"
-                        android:layout_marginLeft="16dp"
-                        android:layout_toRightOf="@id/timeView"
-                        android:drawableLeft="@drawable/ic_layers_grey_500_24dp"
-                        android:drawablePadding="4dp"
-                        android:gravity="center"
-                        android:text="Small"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/divider_height"
-                        android:layout_alignLeft="@id/titleView"
-                        android:layout_below="@id/dateView"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/dividerColor"/>
-
-                    <TextView
-                        android:id="@+id/pickupHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@id/titleView"
-                        android:layout_below="@id/dateView"
-                        android:layout_marginTop="20dp"
-                        android:text="Pickup: "
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/pickupView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@id/pickupHeader"
-                        android:layout_toRightOf="@id/pickupHeader"
-                        android:text="Nathan Road 1045"/>
-
-                    <TextView
-                        android:id="@+id/handoffHeader"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignLeft="@id/titleView"
-                        android:layout_below="@id/pickupHeader"
-                        android:layout_marginBottom="8dp"
-                        android:text="Handoff: "
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:id="@+id/handoffView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBaseline="@id/handoffHeader"
-                        android:layout_toRightOf="@id/handoffHeader"
-                        android:text="HK Central 2584"/>
-
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
+            <include layout="@layout/item_pickup"/>
 
         </LinearLayout>
 
