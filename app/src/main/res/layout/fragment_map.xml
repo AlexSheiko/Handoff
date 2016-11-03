@@ -118,6 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignLeft="@id/titleView"
                         android:layout_below="@id/titleView"
+                        android:layout_marginLeft="-2dp"
                         android:layout_marginTop="16dp"
                         android:drawableLeft="@drawable/ic_today_grey_500_24dp"
                         android:drawablePadding="4dp"
@@ -155,6 +156,43 @@
                         android:layout_below="@id/dateView"
                         android:layout_marginTop="8dp"
                         android:background="@color/dividerColor"/>
+
+                    <TextView
+                        android:id="@+id/pickupHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/titleView"
+                        android:layout_below="@id/dateView"
+                        android:layout_marginTop="16dp"
+                        android:text="Pickup: "
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/pickupView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/pickupHeader"
+                        android:layout_toRightOf="@id/pickupHeader"
+                        android:text="Nathan Road 1045"/>
+
+                    <TextView
+                        android:id="@+id/handoffHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/titleView"
+                        android:layout_below="@id/pickupHeader"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="4dp"
+                        android:text="Handoff: "
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/handoffView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/handoffHeader"
+                        android:layout_toRightOf="@id/handoffHeader"
+                        android:text="HK Central 2584"/>
 
                 </RelativeLayout>
 
