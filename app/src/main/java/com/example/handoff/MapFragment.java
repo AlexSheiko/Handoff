@@ -80,7 +80,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         // Add a marker in Hong Kong and move the camera
         LatLng hongKong = new LatLng(22.2847202, 114.153556);
-        mMap.addMarker(new MarkerOptions().position(hongKong).title("Marker in Hong Kong"));
+        mMap.addMarker(new MarkerOptions().position(hongKong).title("You are here")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_current_position)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 18f));
 
         addDummyMarkers();
