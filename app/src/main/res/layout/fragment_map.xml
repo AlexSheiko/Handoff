@@ -51,18 +51,79 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
+                android:paddingBottom="16dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="8dp"
                 android:text="Nearby pickups"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <FrameLayout
+                        android:id="@+id/iconContainer"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/background_icon"/>
+
+                    <TextView
+                        android:id="@+id/priceView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/iconContainer"
+                        android:layout_alignRight="@id/iconContainer"
+                        android:layout_below="@id/iconContainer"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="$12 "
+                        android:textSize="24sp"/>
+
+                    <TextView
+                        android:id="@+id/titleView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toRightOf="@id/iconContainer"
+                        android:text="Marly EXODUS headphones"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/divider_height"
+                        android:layout_alignLeft="@id/titleView"
+                        android:layout_below="@id/titleView"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/dividerColor"/>
+
+                    <TextView
+                        android:id="@+id/dateView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/titleView"
+                        android:layout_below="@id/titleView"
+                        android:layout_marginTop="16dp"
+                        android:drawableLeft="@drawable/ic_today_grey_800_24dp"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:text="Today"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
