@@ -90,6 +90,32 @@
             android:drawableLeft="@drawable/ic_shopping_basket_grey_500_24dp"
             android:hint="Item's price"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:foreground="@drawable/background_icon_secondary"
+                android:src="@drawable/ic_photo_camera_grey_500_24dp"/>
+
+            <ImageButton
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="12dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:foreground="@drawable/background_icon_secondary"
+                android:src="@drawable/ic_insert_link_grey_500_24dp"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>
