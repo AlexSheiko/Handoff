@@ -1,83 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_order"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.handoff.AddOrderActivity">
 
-    <EditText
-        android:id="@+id/pickupField"
-        style="@style/InputField"
-        android:layout_marginTop="8dp"
-        android:inputType="textPostalAddress|textCapSentences"
-        android:text="Your current location"/>
-
-    <EditText
-        android:id="@+id/handoffField"
-        style="@style/InputField"
-        android:nextFocusDown="@+id/dateLabel"
-        android:text="HK Central 2584"/>
-
     <LinearLayout
+        android:id="@+id/activity_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal">
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-        <TextView
-            android:id="@+id/dateLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:background="?selectableItemBackground"
-            android:clickable="true"
-            android:drawableLeft="@drawable/ic_today_grey_500_24dp"
-            android:drawableRight="@drawable/ic_keyboard_arrow_down_grey_800_24dp"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:nextFocusDown="@+id/timeLabel"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:text="  Today"/>
+        <EditText
+            android:id="@+id/pickupField"
+            style="@style/InputField"
+            android:layout_marginTop="8dp"
+            android:inputType="textPostalAddress|textCapSentences"
+            android:text="Your current location"/>
 
-        <TextView
-            android:id="@+id/timeLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginLeft="32dp"
-            android:background="?selectableItemBackground"
-            android:clickable="true"
-            android:drawableLeft="@drawable/ic_access_time_grey_500_24dp"
-            android:drawableRight="@drawable/ic_keyboard_arrow_down_grey_800_24dp"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:nextFocusUp="@id/dateLabel"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:text="  Now"/>
+        <EditText
+            android:id="@+id/handoffField"
+            style="@style/InputField"
+            android:nextFocusDown="@+id/dateLabel"
+            android:text="HK Central 2584"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_today_grey_500_24dp"
+                android:drawableRight="@drawable/ic_keyboard_arrow_down_grey_800_24dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:nextFocusDown="@+id/timeLabel"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="  Today"/>
+
+            <TextView
+                android:id="@+id/timeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginLeft="32dp"
+                android:background="?selectableItemBackground"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_access_time_grey_500_24dp"
+                android:drawableRight="@drawable/ic_keyboard_arrow_down_grey_800_24dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:nextFocusUp="@id/dateLabel"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="  Now"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/titleField"
+            style="@style/InputField"
+            android:hint="Title"
+            android:inputType="textCapSentences"/>
+
+        <EditText
+            android:id="@+id/descriptionField"
+            style="@style/InputField"
+            android:gravity="top"
+            android:hint="Add description (optional)"
+            android:inputType="textCapSentences|textMultiLine"
+            android:minLines="3"/>
+
+        <EditText
+            android:id="@+id/priceField"
+            style="@style/InputField"
+            android:drawableLeft="@drawable/ic_shopping_basket_grey_500_24dp"
+            android:hint="Item's price"/>
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/titleField"
-        style="@style/InputField"
-        android:hint="Title"
-        android:inputType="textCapSentences"/>
-
-    <EditText
-        android:id="@+id/descriptionField"
-        style="@style/InputField"
-        android:gravity="top"
-        android:hint="Add description (optional)"
-        android:inputType="textCapSentences|textMultiLine"
-        android:minLines="3"/>
-
-</LinearLayout>
+</ScrollView>

@@ -28,7 +28,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/background_field</item>
         <item name="android:layout_marginTop">16dp</item>
-        <item name="android:textColorHint">#a6000000</item>
+        <item name="android:textColorHint">#b3000000</item>
+        <item name="android:drawablePadding">8dp</item>
     </style>
 
 </resources>
