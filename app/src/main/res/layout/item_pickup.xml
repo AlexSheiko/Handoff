@@ -39,7 +39,7 @@
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/iconContainer"
             android:text="Marly EXODUS headphones"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
 
         <View
             android:layout_width="match_parent"

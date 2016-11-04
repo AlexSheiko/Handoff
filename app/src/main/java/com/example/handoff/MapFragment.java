@@ -60,7 +60,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         View bottomSheet = view.findViewById(R.id.bottom_sheet);
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-        mBottomSheetBehavior.setPeekHeight(dpToPixels(140));
+        mBottomSheetBehavior.setPeekHeight(dpToPixels(130));
         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
     }
 
