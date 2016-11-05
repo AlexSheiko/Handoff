@@ -20,26 +20,26 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapFragment extends Fragment implements OnMapReadyCallback {
+public class PickupsFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private BottomSheetBehavior<View> mBottomSheetBehavior;
 
-    public MapFragment() {
+    public PickupsFragment() {
     }
 
     /**
      * Returns a new instance of this fragment
      */
     public static Fragment newInstance() {
-        return new MapFragment();
+        return new PickupsFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false);
+        return inflater.inflate(R.layout.fragment_pickups, container, false);
     }
 
     @Override

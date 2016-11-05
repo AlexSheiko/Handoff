@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                 default:
-                    return MapFragment.newInstance();
+                    return PickupsFragment.newInstance();
                 case 1:
                 case 2:
                 case 3:

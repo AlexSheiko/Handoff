@@ -8,7 +8,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
-    tools:showIn="@layout/fragment_map">
+    tools:showIn="@layout/fragment_pickups">
 
     <RelativeLayout
         android:layout_width="match_parent"
