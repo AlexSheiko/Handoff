@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -61,6 +62,21 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         mBottomSheetBehavior.setPeekHeight(dpToPixels(200));
         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View productInfoContainer = view.findViewById(R.id.productInfoContainer);
+                Intent intent = new Intent(getActivity(), PickupDetailActivity.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(getActivity(), productInfoContainer, "details");
+                startActivity(intent, options.toBundle());
+            }
+        };
+        view.findViewById(R.id.card1).setOnClickListener(listener);
+        view.findViewById(R.id.card2).setOnClickListener(listener);
+        view.findViewById(R.id.card3).setOnClickListener(listener);
+        view.findViewById(R.id.card4).setOnClickListener(listener);
     }
 
     /**

@@ -8,7 +8,6 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
-    android:onClick="onClickPickup"
     tools:showIn="@layout/fragment_map">
 
     <RelativeLayout
@@ -36,12 +35,17 @@
             android:text="$12 "
             android:textSize="20sp"/>
 
-        <TextView
-            android:id="@+id/productNameView"
+        <RelativeLayout
+            android:id="@+id/productInfoContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/iconContainer"
+            android:layout_toRightOf="@id/iconContainer">
+
+            <TextView
+            android:id="@+id/productNameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Marly EXODUS headphones"
             android:textSize="16sp"/>
 
@@ -133,6 +137,8 @@
             android:layout_alignBaseline="@id/handoffHeader"
             android:layout_toRightOf="@id/handoffHeader"
             android:text="HK Central 2584"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

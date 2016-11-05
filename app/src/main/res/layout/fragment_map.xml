@@ -68,13 +68,21 @@
                 android:textColor="@android:color/white"
                 android:textSize="16sp"/>
 
-            <include layout="@layout/item_pickup"/>
+            <include
+                android:id="@+id/card1"
+                layout="@layout/item_pickup"/>
 
-            <include layout="@layout/item_pickup"/>
+            <include
+                android:id="@+id/card2"
+                layout="@layout/item_pickup"/>
 
-            <include layout="@layout/item_pickup"/>
+            <include
+                android:id="@+id/card3"
+                layout="@layout/item_pickup"/>
 
-            <include layout="@layout/item_pickup"/>
+            <include
+                android:id="@+id/card4"
+                layout="@layout/item_pickup"/>
 
         </LinearLayout>
 
