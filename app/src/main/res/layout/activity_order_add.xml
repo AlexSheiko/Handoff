@@ -74,7 +74,8 @@
             android:id="@+id/titleField"
             style="@style/InputField"
             android:hint="Title"
-            android:inputType="textCapSentences"/>
+            android:inputType="textCapSentences"
+            android:nextFocusUp="@id/timeLabel"/>
 
         <EditText
             android:id="@+id/descriptionField"
@@ -88,7 +89,9 @@
             android:id="@+id/priceField"
             style="@style/InputField"
             android:drawableLeft="@drawable/ic_shopping_basket_grey_500_24dp"
-            android:hint="Item's price"/>
+            android:hint="Item's price"
+            android:imeOptions="actionDone"
+            android:inputType="numberSigned"/>
 
         <LinearLayout
             android:layout_width="match_parent"
