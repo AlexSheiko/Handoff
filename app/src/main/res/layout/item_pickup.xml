@@ -37,7 +37,7 @@
             android:textSize="20sp"/>
 
         <TextView
-            android:id="@+id/titleView"
+            android:id="@+id/productNameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -48,8 +48,8 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/divider_height"
-            android:layout_alignLeft="@id/titleView"
-            android:layout_below="@id/titleView"
+            android:layout_alignLeft="@id/productNameView"
+            android:layout_below="@id/productNameView"
             android:layout_marginTop="8dp"
             android:background="@color/dividerColor"/>
 
@@ -57,8 +57,8 @@
             android:id="@+id/dateView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/titleView"
-            android:layout_below="@id/titleView"
+            android:layout_alignLeft="@id/productNameView"
+            android:layout_below="@id/productNameView"
             android:layout_marginLeft="-2dp"
             android:layout_marginTop="16dp"
             android:drawableLeft="@drawable/ic_today_grey_500_24dp"
@@ -93,7 +93,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/divider_height"
-            android:layout_alignLeft="@id/titleView"
+            android:layout_alignLeft="@id/productNameView"
             android:layout_below="@id/dateView"
             android:layout_marginTop="8dp"
             android:background="@color/dividerColor"/>
@@ -102,7 +102,7 @@
             android:id="@+id/pickupHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/titleView"
+            android:layout_alignLeft="@id/productNameView"
             android:layout_below="@id/dateView"
             android:layout_marginTop="20dp"
             android:text="Pickup: "
@@ -120,7 +120,7 @@
             android:id="@+id/handoffHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/titleView"
+            android:layout_alignLeft="@id/productNameView"
             android:layout_below="@id/pickupHeader"
             android:layout_marginBottom="8dp"
             android:text="Handoff: "
