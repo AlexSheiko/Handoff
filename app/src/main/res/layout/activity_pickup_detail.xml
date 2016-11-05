@@ -4,20 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.handoff.PickupDetailActivity">
+    tools:context="com.example.handoff.PickupDetailActivity"
+    tools:ignore="RtlHardcoded">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/activity_pickup_detail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/productImageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/product_example"/>
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/userImageView"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_below="@id/productImageView"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:src="@drawable/user_example"/>
+
+        <TextView
+            android:id="@+id/userNameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/userImageView"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/userImageView"
+            android:text="Aaron Bennet"/>
+
+        <RatingBar
+            android:id="@+id/userRatingView"
+            style="?ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_alignLeft="@id/userNameView"
+            android:layout_below="@id/userNameView"
+            android:layout_marginLeft="-56dp"
+            android:layout_marginTop="-12dp"
+
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="2.5"
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+            android:stepSize="0.1"/>
+
+    </RelativeLayout>
 
 </ScrollView>
