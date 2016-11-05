@@ -41,6 +41,11 @@
             android:label="@string/title_activity_order_add"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity
+            android:name=".PickupDetailActivity"
+            android:label="@string/title_activity_detail_pickup"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

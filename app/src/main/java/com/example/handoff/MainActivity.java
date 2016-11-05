@@ -1,5 +1,6 @@
 package com.example.handoff;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -82,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickPickup(View view) {
+        startActivity(new Intent(this, PickupDetailActivity.class));
     }
 
     /**

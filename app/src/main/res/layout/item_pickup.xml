@@ -8,6 +8,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
+    android:onClick="onClickPickup"
     tools:showIn="@layout/fragment_map">
 
     <RelativeLayout
