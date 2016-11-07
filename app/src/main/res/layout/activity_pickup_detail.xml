@@ -131,6 +131,18 @@
                 android:gravity="center"
                 android:text="Small"/>
 
+            <TextView
+                android:id="@+id/priceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/weightView"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/weightView"
+                android:drawableLeft="@drawable/ic_shopping_basket_grey_500_24dp"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:text="$15"/>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divider_height"
