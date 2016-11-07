@@ -20,14 +20,14 @@
 
         <EditText
             android:id="@+id/pickupField"
-            style="@style/InputField"
+            style="@style/InputField.Border"
             android:layout_marginTop="8dp"
             android:inputType="textPostalAddress|textCapSentences"
             android:text="Your current location"/>
 
         <EditText
             android:id="@+id/handoffField"
-            style="@style/InputField"
+            style="@style/InputField.Border"
             android:nextFocusDown="@+id/dateLabel"
             android:text="HK Central 2584"/>
 
@@ -72,14 +72,14 @@
 
         <EditText
             android:id="@+id/titleField"
-            style="@style/InputField"
+            style="@style/InputField.Border"
             android:hint="Title"
             android:inputType="textCapSentences"
             android:nextFocusUp="@id/timeLabel"/>
 
         <EditText
             android:id="@+id/descriptionField"
-            style="@style/InputField"
+            style="@style/InputField.Border"
             android:gravity="top"
             android:hint="Add description (optional)"
             android:inputType="textCapSentences|textMultiLine"
@@ -87,7 +87,7 @@
 
         <EditText
             android:id="@+id/priceField"
-            style="@style/InputField"
+            style="@style/InputField.Border"
             android:drawableLeft="@drawable/ic_shopping_basket_grey_500_24dp"
             android:hint="Item's price"
             android:imeOptions="actionDone"
