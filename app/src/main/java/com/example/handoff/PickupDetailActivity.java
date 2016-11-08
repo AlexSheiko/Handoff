@@ -1,10 +1,9 @@
 package com.example.handoff;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-public class PickupDetailActivity extends AppCompatActivity {
+public class PickupDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
