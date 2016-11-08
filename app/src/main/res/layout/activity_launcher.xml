@@ -50,7 +50,7 @@
         android:onClick="onClickSignUp"
         android:text="Sign Up"
         android:textAllCaps="false"
-        android:textColor="#e2ffffff"
+        android:textColor="@android:color/white"
         android:textSize="18sp"/>
 
     <TextView
