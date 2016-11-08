@@ -35,7 +35,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="32dp"
             android:gravity="center_horizontal"
-            android:text="Hand■ff ™"
+            android:text="Hand■ff"
             android:textColor="@color/colorPrimary"
             android:textSize="45sp"
             android:transitionName="logo"/>
