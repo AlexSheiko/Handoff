@@ -28,16 +28,14 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
-        <TextView
+        <ImageView
             android:id="@+id/logoView"
-            android:layout_width="match_parent"
+            android:layout_width="185dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center_horizontal"
-            android:text="Hand■ff"
-            android:textColor="@color/colorPrimary"
-            android:textSize="45sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo"
             android:transitionName="logo"/>
 
         <EditText
