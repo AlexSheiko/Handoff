@@ -42,7 +42,7 @@
             android:parentActivityName=".MainActivity">
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar.Login">
         </activity>
         <activity

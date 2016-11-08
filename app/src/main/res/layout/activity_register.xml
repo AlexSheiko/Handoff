@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context="com.example.handoff.LoginActivity">
+    tools:context="com.example.handoff.RegisterActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -16,7 +16,6 @@
         android:src="@drawable/background_login"/>
 
     <LinearLayout
-        android:id="@+id/activity_login"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="32dp"
@@ -29,6 +28,7 @@
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
+            android:id="@+id/logoView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -36,7 +36,8 @@
             android:gravity="center_horizontal"
             android:text="Hand■ff ™"
             android:textColor="@color/colorPrimary"
-            android:textSize="45sp"/>
+            android:textSize="45sp"
+            android:transitionName="logo"/>
 
         <EditText
             style="@style/InputField.Login"

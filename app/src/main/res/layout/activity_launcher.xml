@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_launcher_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="32dp"
-    android:layout_marginRight="32dp"
-    android:layout_marginTop="24dp"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.example.handoff.LauncherActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="#caffffff"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_login"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
     <TextView
+        android:id="@+id/logoView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -22,7 +36,8 @@
         android:gravity="center_horizontal"
         android:text="Hand■ff ™"
         android:textColor="@color/colorPrimary"
-        android:textSize="45sp"/>
+        android:textSize="45sp"
+        android:transitionName="logo"/>
 
     <Button
         style="@style/Widget.AppCompat.Button.Colored"
@@ -30,6 +45,7 @@
         android:layout_height="64dp"
         android:layout_marginTop="48dp"
         android:backgroundTint="@color/colorPrimary"
+        android:onClick="onClickSignUp"
         android:text="Sign Up"
         android:textAllCaps="false"
         android:textColor="#e2ffffff"
@@ -64,4 +80,6 @@
         android:textAllCaps="false"
         android:textSize="18sp"/>
 
-</LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

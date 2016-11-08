@@ -1,8 +1,11 @@
 package com.example.handoff;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.WindowManager;
 
 public class LauncherActivity extends AppCompatActivity {
@@ -16,5 +19,13 @@ public class LauncherActivity extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
+    }
+
+    public void onClickSignUp(View view) {
+        View logoView = findViewById(R.id.logoView);
+        Intent intent = new Intent(this, RegisterActivity.class);
+        ActivityOptionsCompat options = ActivityOptionsCompat.
+                makeSceneTransitionAnimation(this, logoView, "logo");
+        startActivity(intent, options.toBundle());
     }
 }
