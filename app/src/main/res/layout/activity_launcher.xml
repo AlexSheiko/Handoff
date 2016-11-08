@@ -40,6 +40,7 @@
         android:transitionName="logo"/>
 
     <Button
+        android:id="@+id/signUpButton"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="64dp"
@@ -78,7 +79,8 @@
         android:fontFamily="sans-serif-normal"
         android:text="Already have an account? Log In"
         android:textAllCaps="false"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:transitionName="button"/>
 
     </LinearLayout>
 
