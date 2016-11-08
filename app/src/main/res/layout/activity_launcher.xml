@@ -60,7 +60,8 @@
         android:layout_marginBottom="14dp"
         android:layout_marginTop="12dp"
         android:text="o r"
-        android:textAllCaps="true"/>
+        android:textAllCaps="true"
+        android:textSize="16sp"/>
 
     <Button
         style="@style/Widget.AppCompat.Button.Colored"
