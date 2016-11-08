@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -26,6 +28,13 @@ public class LauncherActivity extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.backgroundImageView);
         Glide.with(this).load(R.drawable.background_login).centerCrop().into(imageView);
+
+        highlightSignInLabel();
+    }
+
+    private void highlightSignInLabel() {
+        Button signInButton = (Button) findViewById(R.id.signInButton);
+        signInButton.setText(Html.fromHtml("Already have an account? <font color='#689F38'><b>Log In</b></font>"));
     }
 
     public void onClickSignUp(View view) {
