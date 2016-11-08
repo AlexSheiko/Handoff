@@ -8,6 +8,9 @@ import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 public class LauncherActivity extends AppCompatActivity {
 
@@ -20,6 +23,9 @@ public class LauncherActivity extends AppCompatActivity {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
+
+        ImageView imageView = (ImageView) findViewById(R.id.backgroundImageView);
+        Glide.with(this).load(R.drawable.background_login).centerCrop().into(imageView);
     }
 
     public void onClickSignUp(View view) {
