@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -47,5 +48,9 @@ public class LauncherActivity extends BaseActivity {
                         new Pair<>(logoView, "logo"),
                         new Pair<>(signUpButton, "button"));
         startActivity(intent, options.toBundle());
+    }
+
+    public void onClickFacebook(View view) {
+        Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show();
     }
 }

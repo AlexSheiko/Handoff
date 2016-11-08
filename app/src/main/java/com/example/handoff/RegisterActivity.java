@@ -1,7 +1,9 @@
 package com.example.handoff;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -23,5 +25,12 @@ public class RegisterActivity extends BaseActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.backgroundImageView);
         Glide.with(this).load(R.drawable.background_login).centerCrop().into(imageView);
+    }
+
+    public void onClickSubmit(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 }

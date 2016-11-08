@@ -12,7 +12,7 @@
         android:id="@+id/backgroundImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foreground="#caffffff"
+        android:foreground="#e6ffffff"
         tools:scaleType="centerCrop"
         tools:src="@drawable/background_login"/>
 
@@ -66,6 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:backgroundTint="#507ec1"
+        android:onClick="onClickFacebook"
         android:text="Connect with Facebook"
         android:textAllCaps="false"
         android:textColor="#e2ffffff"
