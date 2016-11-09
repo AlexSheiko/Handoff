@@ -4,9 +4,10 @@
     <item
         android:drawable="@color/colorBackground"/>
 
-    <item>
+    <item
+        android:top="90dp">
         <bitmap
-            android:gravity="center"
+            android:gravity="top|center_horizontal"
             android:src="@drawable/logo"/>
     </item>
 

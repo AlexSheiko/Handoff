@@ -16,7 +16,11 @@
 
     <style name="AppTheme.NoActionBar.Login">
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:statusBarColor">@color/colorBackground</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Login.Launcher">
+        <item name="android:windowBackground">@drawable/background_window</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

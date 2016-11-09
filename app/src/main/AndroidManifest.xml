@@ -49,7 +49,7 @@
         </activity>
         <activity
             android:name=".LauncherActivity"
-            android:theme="@style/AppTheme.NoActionBar.Login">
+            android:theme="@style/AppTheme.NoActionBar.Login.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
