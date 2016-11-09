@@ -154,11 +154,11 @@ public class MainActivity extends BaseActivity {
                 case 0:
                     return "Home";
                 case 1:
-                    return "Community";
+                    return "Forum";
                 case 2:
-                    return "On Sale";
+                    return "Sale";
                 case 3:
-                    return "In Progress";
+                    return "Progress";
             }
             return null;
         }
