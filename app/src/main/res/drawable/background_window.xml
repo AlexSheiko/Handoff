@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:drawable="@color/colorBackground"/>
+
     <item
-        android:drawable="@color/colorBackground"/>
+        android:drawable="@drawable/background_login_tinted"/>
 
     <item
         android:top="90dp">
         <bitmap
-            android:gravity="top|center_horizontal"
+            android:gravity="top"
             android:src="@drawable/logo"/>
     </item>
 

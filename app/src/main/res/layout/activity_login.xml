@@ -65,8 +65,8 @@
                 android:onClick="onClickRestore"
                 android:text="Forgot Password?"
                 android:textAllCaps="false"
-                android:textColor="#ab000000"
-                android:textSize="17sp"/>
+                android:textColor="#84000000"
+                android:textSize="15sp"/>
 
             <Button
                 android:id="@+id/signInButton"
