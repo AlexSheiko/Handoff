@@ -53,4 +53,14 @@ public class LauncherActivity extends BaseActivity {
     public void onClickFacebook(View view) {
         Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show();
     }
+
+    public void onClickSignIn(View view) {
+        View logoView = findViewById(R.id.logoView);
+        View signInButton = findViewById(R.id.signInButton);
+        Intent intent = new Intent(this, LoginActivity.class);
+        ActivityOptionsCompat options = ActivityOptionsCompat.
+                makeSceneTransitionAnimation(this,
+                        new Pair<>(logoView, "logo"));
+        startActivity(intent, options.toBundle());
+    }
 }
