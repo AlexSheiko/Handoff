@@ -1,4 +1,4 @@
-package com.example.handoff.pickup;
+package com.example.handoff.main;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;

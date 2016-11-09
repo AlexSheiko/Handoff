@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".pickup.MainActivity"
+            android:name=".main.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <!--
@@ -34,14 +34,14 @@
             android:value="@string/google_maps_key"/>
 
         <activity
-            android:name=".pickup.AddOrderActivity"
+            android:name=".main.AddOrderActivity"
             android:label="@string/title_activity_order_add"
-            android:parentActivityName=".pickup.MainActivity">
+            android:parentActivityName=".main.MainActivity">
         </activity>
         <activity
-            android:name=".pickup.PickupDetailActivity"
+            android:name=".main.PickupDetailActivity"
             android:label="@string/title_activity_detail_pickup"
-            android:parentActivityName=".pickup.MainActivity">
+            android:parentActivityName=".main.MainActivity">
         </activity>
         <activity
             android:name=".signin.RegisterActivity"

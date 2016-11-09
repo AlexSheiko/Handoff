@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.handoff.R;
-import com.example.handoff.pickup.MainActivity;
+import com.example.handoff.main.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

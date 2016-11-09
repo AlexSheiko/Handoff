@@ -1,4 +1,4 @@
-package com.example.handoff.pickup;
+package com.example.handoff.main;
 
 import android.content.Intent;
 import android.os.Bundle;

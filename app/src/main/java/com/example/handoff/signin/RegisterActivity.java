@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.example.handoff.R;
 import com.example.handoff.base.BaseActivity;
-import com.example.handoff.pickup.MainActivity;
+import com.example.handoff.main.MainActivity;
 
 public class RegisterActivity extends BaseActivity {
 
@@ -31,9 +31,18 @@ public class RegisterActivity extends BaseActivity {
     }
 
     public void onClickSubmit(View view) {
+        register();
+        navigateToMainActivity();
+    }
+
+    private void navigateToMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
+    }
+
+    private void register() {
+
     }
 }
