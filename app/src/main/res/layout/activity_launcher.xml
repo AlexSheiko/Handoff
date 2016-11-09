@@ -12,7 +12,7 @@
         android:id="@+id/backgroundImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:foreground="#e6ffffff"
+        android:alpha="0.1"
         tools:scaleType="centerCrop"
         tools:src="@drawable/background_login"/>
 
