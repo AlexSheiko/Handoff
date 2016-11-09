@@ -36,7 +36,7 @@ public class LauncherActivity extends BaseActivity {
 
     private void highlightSignInLabel() {
         Button signInButton = (Button) findViewById(R.id.signInButton);
-        signInButton.setText(Html.fromHtml("Already have an account? <font color='#689F38'><b>Log In</b></font>"));
+        signInButton.setText(Html.fromHtml("Already have an account? <font color='#689F38'><b>Log\u00A0In</b></font>"));
     }
 
     public void onClickSignUp(View view) {

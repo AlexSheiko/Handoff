@@ -87,7 +87,7 @@
                 android:textColor="#ab000000"
                 android:textSize="17sp"
                 android:transitionName="button"
-                tools:text="Already have an account? Log In"/>
+                tools:text="Already have an account? Log\u00A0In"/>
 
         </LinearLayout>
 
