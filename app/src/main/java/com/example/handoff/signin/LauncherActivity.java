@@ -1,4 +1,4 @@
-package com.example.handoff;
+package com.example.handoff.signin;
 
 import android.content.Intent;
 import android.os.Build;
@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.handoff.R;
+import com.example.handoff.base.BaseActivity;
 
 public class LauncherActivity extends BaseActivity {
 

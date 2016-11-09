@@ -1,4 +1,4 @@
-package com.example.handoff;
+package com.example.handoff.base;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;

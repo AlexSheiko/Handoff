@@ -1,4 +1,4 @@
-package com.example.handoff;
+package com.example.handoff.signin;
 
 import android.content.Intent;
 import android.os.Build;
@@ -8,6 +8,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.handoff.R;
+import com.example.handoff.base.BaseActivity;
+import com.example.handoff.pickup.MainActivity;
 
 public class RegisterActivity extends BaseActivity {
 

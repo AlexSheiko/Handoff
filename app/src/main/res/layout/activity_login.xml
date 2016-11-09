@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context="com.example.handoff.LoginActivity">
+    tools:context="com.example.handoff.signin.LoginActivity">
 
     <ImageView
         android:id="@+id/backgroundImageView"

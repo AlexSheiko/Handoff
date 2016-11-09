@@ -1,4 +1,4 @@
-package com.example.handoff;
+package com.example.handoff.pickup;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.handoff.R;
+import com.example.handoff.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 

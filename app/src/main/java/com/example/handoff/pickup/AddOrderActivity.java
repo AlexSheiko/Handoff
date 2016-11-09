@@ -1,8 +1,11 @@
-package com.example.handoff;
+package com.example.handoff.pickup;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.example.handoff.R;
+import com.example.handoff.base.BaseActivity;
 
 public class AddOrderActivity extends BaseActivity {
 
