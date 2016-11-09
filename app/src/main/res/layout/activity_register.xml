@@ -71,7 +71,6 @@
                 android:layout_height="64dp"
                 android:layout_marginTop="48dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:onClick="onClickSubmit"
                 android:text="Sign Up"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
