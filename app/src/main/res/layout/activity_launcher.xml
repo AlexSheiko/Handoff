@@ -81,7 +81,7 @@
         android:fontFamily="sans-serif-normal"
         android:textAllCaps="false"
         android:textColor="#ab000000"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:transitionName="button"
         tools:text="Already have an account? Log In"/>
 
