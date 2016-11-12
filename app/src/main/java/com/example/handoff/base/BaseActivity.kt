@@ -7,6 +7,9 @@ import android.view.WindowManager
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.handoff.R
+import com.example.handoff.main.MainActivity
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.singleTop
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 open class BaseActivity : AppCompatActivity() {
@@ -18,7 +21,7 @@ open class BaseActivity : AppCompatActivity() {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 
-    fun makeNavigationTransparent() {
+    fun transparentNavigation() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
             window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
@@ -30,5 +33,10 @@ open class BaseActivity : AppCompatActivity() {
                 .load(R.drawable.background_login)
                 .centerCrop()
                 .into(imageView)
+    }
+
+    fun goHome() {
+        startActivity(intentFor<MainActivity>().singleTop())
+        finish()
     }
 }

@@ -1,10 +1,22 @@
 package com.example.handoff.signin
 
-import retrofit2.Call
+import okhttp3.ResponseBody
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.POST
+import rx.Observable
 
 interface WebService {
 
-    @GET("/users")
-    fun users(): Call<List<User>>
+    @FormUrlEncoded
+    @POST("users")
+    fun createUser(@Field("name") name: String,
+                   @Field("email") email: String,
+                   @Field("password") password: String,
+                   @Field("password_confirmation") passConfirm: String
+    ): Observable<ResponseBody>
+
+    @GET("users")
+    fun users(): Observable<List<User>>
 }

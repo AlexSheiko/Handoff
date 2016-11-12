@@ -126,7 +126,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
             android:onClick="onClickOrder"
-            android:text="create order"/>
+            android:text="register order"/>
 
     </LinearLayout>
 

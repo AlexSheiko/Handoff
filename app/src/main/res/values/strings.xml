@@ -7,4 +7,5 @@
     <string name="search_hint">Search Settings</string>
     <string name="title_activity_order_add">Create new order</string>
     <string name="title_activity_detail_pickup">Item</string>
+    <string name="error_required">Required field</string>
 </resources>

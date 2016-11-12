@@ -43,22 +43,26 @@
                 android:transitionName="logo"/>
 
             <EditText
+                android:id="@+id/name"
                 style="@style/InputField.Login"
                 android:layout_marginTop="24dp"
                 android:hint="Full Name"
                 android:inputType="textPersonName|textCapWords"/>
 
             <EditText
+                android:id="@+id/phone"
                 style="@style/InputField.Login"
                 android:hint="Phone Number"
                 android:inputType="phone"/>
 
             <EditText
+                android:id="@+id/email"
                 style="@style/InputField.Login"
                 android:hint="Email Address"
                 android:inputType="textEmailAddress"/>
 
             <EditText
+                android:id="@+id/password"
                 style="@style/InputField.Login"
                 android:fontFamily="sans-serif"
                 android:hint="Password"
