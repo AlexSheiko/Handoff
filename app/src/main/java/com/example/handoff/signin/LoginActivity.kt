@@ -13,6 +13,7 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        transparentStatus()
         load(backgroundImageView)
 
         signInButton.onClick { signIp() }

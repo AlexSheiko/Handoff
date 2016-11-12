@@ -19,6 +19,7 @@ class RegisterActivity : BaseActivity(), Extensions {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        transparentStatus()
         load(backgroundImageView)
 
         signUpButton.onClick { signUp() }

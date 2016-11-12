@@ -6,16 +6,17 @@ import android.text.Html
 import android.view.View
 import com.example.handoff.R
 import com.example.handoff.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_launcher.*
+import kotlinx.android.synthetic.main.activity_welcome.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 
-class LauncherActivity : BaseActivity() {
+class WelcomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launcher)
+        setContentView(R.layout.activity_welcome)
 
+        transparentStatus()
         load(backgroundImageView)
 
         highlightLogin()
