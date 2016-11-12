@@ -1,6 +1,7 @@
 package com.example.handoff.signin
 
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,7 +14,11 @@ class ServiceGenerator {
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
 
     fun createService(): WebService {
-        val retrofit = builder.client(OkHttpClient()).build()
+        val logging = HttpLoggingInterceptor()
+        logging.level = HttpLoggingInterceptor.Level.BASIC
+        val client = OkHttpClient.Builder().addInterceptor(logging).build()
+
+        val retrofit = builder.client(client).build()
         return retrofit.create(WebService::class.java)
     }
 }
