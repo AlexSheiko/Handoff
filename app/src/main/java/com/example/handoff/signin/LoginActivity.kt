@@ -13,8 +13,7 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        loadBackground(backgroundImageView)
-        transparentNavigation()
+        load(backgroundImageView)
 
         signInButton.onClick { signIp() }
         restoreButton.onClick { restore() }

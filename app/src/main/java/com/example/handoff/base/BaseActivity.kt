@@ -2,6 +2,7 @@ package com.example.handoff.base
 
 import android.content.Context
 import android.os.Build
+import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
 import android.widget.ImageView
@@ -21,6 +22,11 @@ open class BaseActivity : AppCompatActivity() {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        transparentNavigation()
+    }
+
     fun transparentNavigation() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
@@ -28,7 +34,7 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    fun loadBackground(imageView: ImageView) {
+    fun load(imageView: ImageView) {
         Glide.with(this)
                 .load(R.drawable.background_login)
                 .centerCrop()

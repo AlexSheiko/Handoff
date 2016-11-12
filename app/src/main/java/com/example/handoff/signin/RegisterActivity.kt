@@ -17,15 +17,13 @@ class RegisterActivity : BaseActivity(), Extensions {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        loadBackground(backgroundImageView)
-        transparentNavigation()
+        load(backgroundImageView)
 
         signUpButton.onClick { signUp() }
     }
 
     private fun signUp() {
-        val valid = validate()
-        if (valid) {
+        if (valid()) {
             val user = captureFields()
             register(user)
             goHome()
@@ -40,7 +38,7 @@ class RegisterActivity : BaseActivity(), Extensions {
                 password.text.toString())
     }
 
-    private fun validate(): Boolean {
+    private fun valid(): Boolean {
         var valid = true
         if (password.text.isBlank()) {
             valid = false
