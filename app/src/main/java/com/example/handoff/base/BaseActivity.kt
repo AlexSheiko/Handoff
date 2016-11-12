@@ -1,10 +1,12 @@
 package com.example.handoff.base
 
 import android.content.Context
-import android.os.Build
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES.KITKAT
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.WindowManager
+import android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.handoff.R
@@ -28,14 +30,14 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     fun transparentNavigation() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+        if (SDK_INT >= KITKAT) {
+            window.setFlags(FLAG_TRANSLUCENT_NAVIGATION, FLAG_TRANSLUCENT_NAVIGATION)
         }
     }
 
     fun transparentStatus() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        if (SDK_INT >= KITKAT) {
+            window.setFlags(FLAG_LAYOUT_NO_LIMITS, FLAG_LAYOUT_NO_LIMITS)
         }
     }
 
