@@ -2,14 +2,13 @@ package com.example.handoff.signin
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.ActivityOptionsCompat
-import android.support.v4.util.Pair
 import android.text.Html
 import android.view.View
-import android.widget.Toast
 import com.example.handoff.R
 import com.example.handoff.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_launcher.*
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.toast
 
 class LauncherActivity : BaseActivity() {
 
@@ -28,25 +27,23 @@ class LauncherActivity : BaseActivity() {
     }
 
     fun onClickSignUp(view: View) {
-        val logoView = findViewById(R.id.logoView)
-        val signUpButton = findViewById(R.id.signUpButton)
-        val intent = Intent(this, RegisterActivity::class.java)
-        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
-                Pair(logoView, "logo"),
-                Pair(signUpButton, "button"))
-        startActivity(intent, options.toBundle())
+        val intent = intentFor<RegisterActivity>()
+//        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
+//                *arrayOf(Pair(logoView, "logo"),
+//                Pair(signUpButton, "button")))
+//        startActivity(intent, options.toBundle())
+        startActivity(intent)
     }
 
     fun onClickFacebook(view: View) {
-        Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
+        toast("Coming soon")
     }
 
     fun onClickSignIn(view: View) {
-        val logoView = findViewById(R.id.logoView)
-        val signInButton = findViewById(R.id.signInButton)
         val intent = Intent(this, LoginActivity::class.java)
-        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
-                Pair(logoView, "logo"))
-        startActivity(intent, options.toBundle())
+//        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this,
+//                Pair(logoView, "logo"))
+//        startActivity(intent, options.toBundle())
+        startActivity(intent)
     }
 }

@@ -23,7 +23,7 @@ class RegisterActivity : BaseActivity(), Extensions {
     }
 
     private fun signUp() {
-        if (valid()) {
+        if (valid(password, email, phone, name)) {
             val user = captureFields()
             register(user)
             goHome()
@@ -38,18 +38,20 @@ class RegisterActivity : BaseActivity(), Extensions {
                 password.text.toString())
     }
 
-    private fun valid(): Boolean {
+    private fun valid(vararg fields: EditText): Boolean {
         var valid = true
-        if (password.text.isBlank()) {
-            valid = false
-            showRequired(password)
+        fields.forEach {
+            if (it.text.isBlank()) {
+                valid = false
+                showRequired(it)
+            }
         }
-
         return valid
     }
 
     private fun showRequired(field: EditText) {
         field.error = getString(R.string.error_required)
+        field.requestFocus()
     }
 
     private fun register(user: User) {
