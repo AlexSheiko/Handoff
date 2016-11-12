@@ -15,7 +15,7 @@ class ServiceGenerator {
 
     fun createService(): WebService {
         val logging = HttpLoggingInterceptor()
-        logging.level = HttpLoggingInterceptor.Level.BASIC
+        logging.level = HttpLoggingInterceptor.Level.HEADERS
         val client = OkHttpClient.Builder().addInterceptor(logging).build()
 
         val retrofit = builder.client(client).build()

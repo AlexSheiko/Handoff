@@ -39,7 +39,7 @@
             android:parentActivityName=".main.MainActivity">
         </activity>
         <activity
-            android:name=".main.PickupDetailActivity"
+            android:name=".main.DetailActivity"
             android:label="@string/title_activity_detail_pickup"
             android:parentActivityName=".main.MainActivity">
         </activity>

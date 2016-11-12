@@ -137,7 +137,7 @@ public class MainActivity extends BaseActivity {
             switch (position) {
                 case 0:
                 default:
-                    return PickupsFragment.newInstance();
+                    return MapFragment.newInstance();
                 case 1:
                 case 2:
                 case 3:

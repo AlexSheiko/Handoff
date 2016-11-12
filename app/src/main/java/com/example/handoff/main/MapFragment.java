@@ -21,26 +21,26 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class PickupsFragment extends Fragment implements OnMapReadyCallback {
+public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private BottomSheetBehavior<View> mBottomSheetBehavior;
 
-    public PickupsFragment() {
+    public MapFragment() {
     }
 
     /**
      * Returns a new instance of this fragment
      */
     public static Fragment newInstance() {
-        return new PickupsFragment();
+        return new MapFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pickups, container, false);
+        return inflater.inflate(R.layout.fragment_map, container, false);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class PickupsFragment extends Fragment implements OnMapReadyCallback {
             @Override
             public void onClick(View view) {
                 View productInfoContainer = view.findViewById(R.id.productInfoContainer);
-                Intent intent = new Intent(getActivity(), PickupDetailActivity.class);
+                Intent intent = new Intent(getActivity(), DetailActivity.class);
                 ActivityOptionsCompat options = ActivityOptionsCompat.
                         makeSceneTransitionAnimation(getActivity(), productInfoContainer, "details");
                 startActivity(intent, options.toBundle());
