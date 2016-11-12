@@ -56,9 +56,10 @@ class RegisterActivity : BaseActivity(), Extensions {
                         })
     }
 
-    private fun showLoading(b: Boolean, error: String? = "") {
-        progressBar.visibility = if (b) VISIBLE else GONE
-        signUpButton.enabled = if (b) false else true
+    private fun showLoading(l: Boolean, error: String? = "") {
+        progressBar.visibility = if (l) VISIBLE else GONE
+        signUpButton.enabled = if (l) false else true
+        signUpButton.alpha = if (l) 0.5f else 1.0f
         if (!error.isNullOrBlank()) longToast(R.string.error_login_network)
     }
 }
