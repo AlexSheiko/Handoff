@@ -8,6 +8,7 @@ import com.example.handoff.base.BaseActivity
 import com.example.handoff.base.Extensions
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.enabled
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.onClick
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -57,6 +58,6 @@ class RegisterActivity : BaseActivity(), Extensions {
     private fun showLoading(b: Boolean, error: String? = "") {
         progressBar.visibility = if (b) VISIBLE else GONE
         signUpButton.enabled = if (b) false else true
-        // TODO: if (!error.isNullOrBlank()) toast(error)
+        if (!error.isNullOrBlank()) longToast(R.string.error_login_network)
     }
 }
