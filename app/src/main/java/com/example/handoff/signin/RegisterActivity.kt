@@ -1,11 +1,13 @@
 package com.example.handoff.signin
 
 import android.os.Bundle
-import android.util.Log
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import com.example.handoff.R
 import com.example.handoff.base.BaseActivity
 import com.example.handoff.base.Extensions
 import kotlinx.android.synthetic.main.activity_register.*
+import org.jetbrains.anko.enabled
 import org.jetbrains.anko.onClick
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -25,7 +27,6 @@ class RegisterActivity : BaseActivity(), Extensions {
         if (valid(password, email, phone, name)) {
             val user = captureFields()
             register(user)
-            goHome()
         }
     }
 
@@ -38,12 +39,24 @@ class RegisterActivity : BaseActivity(), Extensions {
     }
 
     private fun register(user: User) {
+        showLoading(true)
+
         val webService = ServiceGenerator().createService()
         webService.createUser(user.name, user.email, user.password, user.password)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        { responseBody -> Log.d("Users", responseBody.string()) },
-                        { error -> Log.e("Error", error.message) })
+                        { responseBody ->
+                            goHome()
+                        },
+                        { error ->
+                            showLoading(false, error.message)
+                        })
+    }
+
+    private fun showLoading(b: Boolean, error: String? = "") {
+        progressBar.visibility = if (b) VISIBLE else GONE
+        signUpButton.enabled = if (b) false else true
+        // TODO: if (!error.isNullOrBlank()) toast(error)
     }
 }
