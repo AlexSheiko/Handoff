@@ -2,7 +2,6 @@ package com.example.handoff.signin
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
 import com.example.handoff.R
 import com.example.handoff.base.BaseActivity
 import com.example.handoff.base.Extensions
@@ -36,22 +35,6 @@ class RegisterActivity : BaseActivity(), Extensions {
                 email.text.toString(),
                 password.text.toString(),
                 password.text.toString())
-    }
-
-    private fun valid(vararg fields: EditText): Boolean {
-        var valid = true
-        fields.forEach {
-            if (it.text.isBlank()) {
-                valid = false
-                showRequired(it)
-            }
-        }
-        return valid
-    }
-
-    private fun showRequired(field: EditText) {
-        field.error = getString(R.string.error_required)
-        field.requestFocus()
     }
 
     private fun register(user: User) {
