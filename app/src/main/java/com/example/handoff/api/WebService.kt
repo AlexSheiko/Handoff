@@ -1,5 +1,6 @@
-package com.example.handoff.signin
+package com.example.handoff.api
 
+import com.example.handoff.api.model.User
 import okhttp3.ResponseBody
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

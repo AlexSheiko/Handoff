@@ -2,6 +2,7 @@ package com.example.handoff.signin
 
 import android.os.Bundle
 import com.example.handoff.R
+import com.example.handoff.api.ServiceGenerator
 import com.example.handoff.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.onClick
@@ -16,11 +17,12 @@ class LoginActivity : BaseActivity() {
         transparentStatus()
         load(backgroundImageView)
 
-        signInButton.onClick { signIp() }
+        signInButton.onClick { signUp() }
         restoreButton.onClick { restore() }
     }
 
-    private fun signIp() {
+    private fun signUp() {
+        val service = ServiceGenerator.createService()
         goHome()
     }
 

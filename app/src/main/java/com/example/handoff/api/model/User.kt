@@ -1,4 +1,4 @@
-package com.example.handoff.signin
+package com.example.handoff.api.model
 
 data class User(
         val name: String,

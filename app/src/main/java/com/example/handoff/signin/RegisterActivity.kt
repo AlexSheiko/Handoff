@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
+import com.example.handoff.api.ServiceGenerator
+import com.example.handoff.api.model.User
 import com.example.handoff.base.BaseActivity
 import com.example.handoff.base.Extensions
 import kotlinx.android.synthetic.main.activity_register.*
