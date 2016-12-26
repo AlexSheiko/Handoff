@@ -8,6 +8,6 @@ data class TokenRequest(
         val client_id: String = CLIENT_AUTH,
         val client_secret: String = SECRET_AUTH,
         val grant_type: String = GRANT_AUTH,
-        val username: String,
-        val password: String,
-        val scope: String)
+        val username: String? = null,
+        val password: String? = null,
+        val scope: String? = null)

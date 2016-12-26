@@ -1,7 +1,6 @@
 package com.example.handoff.api
 
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
+import com.example.handoff.api.Constants.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -9,18 +8,23 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ServiceGenerator {
     companion object {
 
-        private val builder = Retrofit.Builder()
-                .baseUrl("http://test.handoff.com.hk/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+        fun createAuthService(): AuthService {
+            return createService(AuthService::class.java)
+        }
 
-        fun createService(): WebService {
-            val logging = HttpLoggingInterceptor()
-            logging.level = HttpLoggingInterceptor.Level.HEADERS
-            val client = OkHttpClient.Builder().addInterceptor(logging).build()
+        fun createUserService(): UserService {
+            return createService(UserService::class.java)
+        }
 
-            val retrofit = builder.client(client).build()
-            return retrofit.create(WebService::class.java)
+        fun <T> createService(clazz: Class<T>): T {
+            val restAdapter = Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .build()
+            val service = restAdapter.create(clazz)
+
+            return service
         }
     }
 }

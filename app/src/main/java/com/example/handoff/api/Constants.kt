@@ -2,6 +2,8 @@ package com.example.handoff.api
 
 object Constants {
 
+    val BASE_URL = "http://test.handoff.com.hk/"
+
     val CLIENT_AUTH = "2"
     val CLIENT_COMMON = "3"
 

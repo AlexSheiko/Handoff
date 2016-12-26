@@ -3,6 +3,7 @@ package com.example.handoff.signin
 import android.os.Bundle
 import com.example.handoff.R
 import com.example.handoff.api.ServiceGenerator
+import com.example.handoff.api.model.TokenRequest
 import com.example.handoff.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.onClick
@@ -22,7 +23,9 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun signUp() {
-        val service = ServiceGenerator.createService()
+        val authService = ServiceGenerator.createAuthService()
+        val userService = ServiceGenerator.createUserService()
+        authService.getToken(TokenRequest())
         goHome()
     }
 
