@@ -7,14 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ServiceGenerator {
     companion object {
-
-        fun createAuthService(): AuthService {
-            return createService(AuthService::class.java)
-        }
-
-        fun createUserService(): UserService {
-            return createService(UserService::class.java)
-        }
+        val authService = createService(AuthService::class.java)
+        val userService = createService(UserService::class.java)
 
         fun <T> createService(clazz: Class<T>): T {
             val restAdapter = Retrofit.Builder()
