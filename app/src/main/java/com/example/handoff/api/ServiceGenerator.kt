@@ -10,7 +10,7 @@ class ServiceGenerator {
     companion object {
 
         private val builder = Retrofit.Builder()
-                .baseUrl("http://test.handoff.com.hk/api/v1/")
+                .baseUrl("http://test.handoff.com.hk/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
 
