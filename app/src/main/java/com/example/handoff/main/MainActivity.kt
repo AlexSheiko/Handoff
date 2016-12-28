@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.view.*
 import android.widget.TextView
 import com.example.handoff.R
+import com.example.handoff.api.Constants.KEY_TOKEN
 import com.example.handoff.base.BaseActivity
 import com.example.handoff.signin.WelcomeActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +20,12 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (!loggedIn()) {
+            login()
+            return
+        }
+
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
@@ -53,9 +60,16 @@ class MainActivity : BaseActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    private fun loggedIn(): Boolean {
+        return getPrefs().getString(KEY_TOKEN, "").isNotEmpty()
+    }
+
     private fun logout() {
         getPrefs().edit().clear().apply()
+        login()
+    }
 
+    private fun login() {
         startActivity<WelcomeActivity>()
         finishAffinity()
     }
