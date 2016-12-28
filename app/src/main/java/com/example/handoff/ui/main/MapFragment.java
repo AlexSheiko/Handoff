@@ -1,4 +1,4 @@
-package com.example.handoff.main;
+package com.example.handoff.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;

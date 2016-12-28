@@ -1,4 +1,4 @@
-package com.example.handoff.api
+package com.example.handoff.util
 
 object Constants {
 

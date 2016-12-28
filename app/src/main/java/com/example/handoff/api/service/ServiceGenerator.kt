@@ -1,6 +1,6 @@
-package com.example.handoff.api
+package com.example.handoff.api.service
 
-import com.example.handoff.api.Constants.BASE_URL
+import com.example.handoff.util.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

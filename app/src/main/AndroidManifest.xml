@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
-        android:name=".HandoffApplication"
+        android:name=".HandoffApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +16,7 @@
             android:value="@string/google_maps_key"/>
 
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.example.handoff.ui.main.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -25,25 +25,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".main.AddOrderActivity"
+            android:name="com.example.handoff.ui.main.AddOrderActivity"
             android:label="@string/title_activity_order_add"
-            android:parentActivityName=".main.MainActivity">
+            android:parentActivityName="com.example.handoff.ui.main.MainActivity">
         </activity>
         <activity
-            android:name=".main.DetailActivity"
+            android:name="com.example.handoff.ui.main.DetailActivity"
             android:label="@string/title_activity_detail_pickup"
-            android:parentActivityName=".main.MainActivity">
+            android:parentActivityName="com.example.handoff.ui.main.MainActivity">
         </activity>
         <activity
-            android:name=".signin.RegisterActivity"
+            android:name="com.example.handoff.ui.signin.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar.Login">
         </activity>
         <activity
-            android:name=".signin.WelcomeActivity"
+            android:name="com.example.handoff.ui.signin.WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar.Login.Launcher">
         </activity>
         <activity
-            android:name=".signin.LoginActivity"
+            android:name="com.example.handoff.ui.signin.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar.Login">
         </activity>
     </application>

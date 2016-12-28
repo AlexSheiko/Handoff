@@ -1,4 +1,4 @@
-package com.example.handoff.main
+package com.example.handoff.ui.main
 
 import android.os.Bundle
 import android.support.design.widget.TabLayout
@@ -8,9 +8,9 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.view.*
 import android.widget.TextView
 import com.example.handoff.R
-import com.example.handoff.api.Constants.KEY_TOKEN
-import com.example.handoff.base.BaseActivity
-import com.example.handoff.signin.WelcomeActivity
+import com.example.handoff.ui.base.BaseActivity
+import com.example.handoff.ui.signin.WelcomeActivity
+import com.example.handoff.util.Constants.KEY_TOKEN
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 

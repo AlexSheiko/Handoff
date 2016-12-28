@@ -7,7 +7,7 @@
     android:background="@color/colorBackground"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context="com.example.handoff.signin.WelcomeActivity">
+    tools:context=".ui.signin.WelcomeActivity">
 
     <ImageView
         android:id="@+id/backgroundImageView"

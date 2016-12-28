@@ -1,16 +1,16 @@
-package com.example.handoff.signin
+package com.example.handoff.ui.signin
 
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
-import com.example.handoff.api.Constants.BEARER
-import com.example.handoff.api.ServiceGenerator.Companion.authService
-import com.example.handoff.api.ServiceGenerator.Companion.userService
 import com.example.handoff.api.model.Token
 import com.example.handoff.api.model.TokenRequest
 import com.example.handoff.api.model.User
-import com.example.handoff.base.BaseActivity
+import com.example.handoff.api.service.ServiceGenerator.Companion.authService
+import com.example.handoff.api.service.ServiceGenerator.Companion.userService
+import com.example.handoff.ui.base.BaseActivity
+import com.example.handoff.util.Constants.BEARER
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.enabled
 import org.jetbrains.anko.longToast

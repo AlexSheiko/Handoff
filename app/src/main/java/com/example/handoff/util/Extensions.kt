@@ -1,14 +1,15 @@
-package com.example.handoff.base
+package com.example.handoff.util
 
 import android.widget.EditText
 import com.example.handoff.R
-import com.example.handoff.api.Constants.CLIENT_AUTH
-import com.example.handoff.api.Constants.GRANT_AUTH
-import com.example.handoff.api.Constants.KEY_TOKEN
-import com.example.handoff.api.Constants.SECRET_AUTH
 import com.example.handoff.api.model.Token
 import com.example.handoff.api.model.TokenRequest
 import com.example.handoff.api.model.User
+import com.example.handoff.ui.base.BaseActivity
+import com.example.handoff.util.Constants.CLIENT_AUTH
+import com.example.handoff.util.Constants.GRANT_AUTH
+import com.example.handoff.util.Constants.KEY_TOKEN
+import com.example.handoff.util.Constants.SECRET_AUTH
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

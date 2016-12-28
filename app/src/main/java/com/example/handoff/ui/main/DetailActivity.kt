@@ -1,10 +1,10 @@
-package com.example.handoff.main
+package com.example.handoff.ui.main
 
 import android.os.Bundle
 import android.view.MenuItem
 
 import com.example.handoff.R
-import com.example.handoff.base.BaseActivity
+import com.example.handoff.ui.base.BaseActivity
 
 class DetailActivity : BaseActivity() {
 

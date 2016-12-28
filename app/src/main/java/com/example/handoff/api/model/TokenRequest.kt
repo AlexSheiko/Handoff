@@ -1,8 +1,8 @@
 package com.example.handoff.api.model
 
-import com.example.handoff.api.Constants.CLIENT_COMMON
-import com.example.handoff.api.Constants.GRANT_COMMON
-import com.example.handoff.api.Constants.SECRET_COMMON
+import com.example.handoff.util.Constants.CLIENT_COMMON
+import com.example.handoff.util.Constants.GRANT_COMMON
+import com.example.handoff.util.Constants.SECRET_COMMON
 
 data class TokenRequest(
         val client_id: String = CLIENT_COMMON,

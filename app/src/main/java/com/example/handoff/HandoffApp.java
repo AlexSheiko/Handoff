@@ -4,7 +4,7 @@ import android.app.Application;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class HandoffApplication extends Application {
+public class HandoffApp extends Application {
 
     @Override
     public void onCreate() {

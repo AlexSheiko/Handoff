@@ -1,4 +1,4 @@
-package com.example.handoff.api
+package com.example.handoff.api.service
 
 import com.example.handoff.api.model.User
 import okhttp3.ResponseBody

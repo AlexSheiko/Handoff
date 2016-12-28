@@ -1,11 +1,11 @@
-package com.example.handoff.signin
+package com.example.handoff.ui.signin
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.view.View
 import com.example.handoff.R
-import com.example.handoff.base.BaseActivity
+import com.example.handoff.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_welcome.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast

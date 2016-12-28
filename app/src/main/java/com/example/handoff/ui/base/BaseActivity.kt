@@ -1,4 +1,4 @@
-package com.example.handoff.base
+package com.example.handoff.ui.base
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -12,7 +12,8 @@ import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.handoff.R
-import com.example.handoff.main.MainActivity
+import com.example.handoff.ui.main.MainActivity
+import com.example.handoff.util.Extensions
 import org.jetbrains.anko.startActivity
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
