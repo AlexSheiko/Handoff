@@ -5,6 +5,8 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
 import com.example.handoff.api.ServiceGenerator.Companion.authService
+import com.example.handoff.api.ServiceGenerator.Companion.userService
+import com.example.handoff.api.model.Token
 import com.example.handoff.api.model.TokenRequest
 import com.example.handoff.api.model.User
 import com.example.handoff.base.BaseActivity
@@ -39,7 +41,6 @@ class RegisterActivity : BaseActivity(), Extensions {
         return User(
                 name.text.toString(),
                 email.text.toString(),
-                password.text.toString(),
                 password.text.toString())
     }
 
@@ -47,6 +48,8 @@ class RegisterActivity : BaseActivity(), Extensions {
         showLoading(true)
 
         authService.getToken(TokenRequest())
+                .map { token -> userService.createUser(user, bearer(token)) }
+                .map { token -> }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
@@ -61,6 +64,10 @@ class RegisterActivity : BaseActivity(), Extensions {
                         { responseBody -> goHome() },
                         { error -> showLoading(false, error.message) })
                         */
+    }
+
+    private fun bearer(token: Token): String {
+        return "Bearer " + token.access_token
     }
 
     private fun showLoading(l: Boolean, error: String? = "") {
