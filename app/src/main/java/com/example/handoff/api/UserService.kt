@@ -1,7 +1,7 @@
 package com.example.handoff.api
 
-import com.example.handoff.api.model.Token
 import com.example.handoff.api.model.User
+import okhttp3.ResponseBody
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -13,7 +13,7 @@ interface UserService {
     @POST("api/v1/users")
     fun createUser(@Body user: User,
                    @Header("Authorization") auth: String
-    ): Observable<Token>
+    ): Observable<ResponseBody>
 
     @GET("api/v1/users")
     fun users(): Observable<List<User>>

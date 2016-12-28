@@ -1,9 +1,11 @@
 package com.example.handoff.base
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.KITKAT
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
 import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
@@ -15,7 +17,7 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.singleTop
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
-open class BaseActivity : AppCompatActivity() {
+open class BaseActivity : AppCompatActivity(), Extensions {
 
     /**
      * Use custom font in all screens.
@@ -51,5 +53,9 @@ open class BaseActivity : AppCompatActivity() {
     fun goHome() {
         startActivity(intentFor<MainActivity>().singleTop())
         finish()
+    }
+
+    fun getPrefs(): SharedPreferences {
+        return PreferenceManager.getDefaultSharedPreferences(this)
     }
 }

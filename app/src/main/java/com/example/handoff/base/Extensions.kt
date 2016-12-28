@@ -7,6 +7,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 interface Extensions {
+
     fun <T> Call<T>.enqueue(success: (response: Response<T>) -> Unit,
                             failure: (t: Throwable) -> Unit) {
         enqueue(object : Callback<T> {
