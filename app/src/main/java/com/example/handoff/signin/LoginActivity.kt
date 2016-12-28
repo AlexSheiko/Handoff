@@ -31,7 +31,7 @@ class LoginActivity : BaseActivity() {
         showLoading(true)
 
         authService.getToken(TokenRequest())
-                .subscribeOn(Schedulers.newThread())
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { token -> goHome() },

@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
-import com.example.handoff.api.ServiceGenerator.Companion.userService
+import com.example.handoff.api.ServiceGenerator
+import com.example.handoff.api.model.TokenRequest
 import com.example.handoff.api.model.User
 import com.example.handoff.base.BaseActivity
 import com.example.handoff.base.Extensions
@@ -28,10 +29,10 @@ class RegisterActivity : BaseActivity(), Extensions {
     }
 
     private fun signUp() {
-        if (valid(password, email, phone, name)) {
+//        if (valid(password, email, phone, name)) {
             val user = captureFields()
             register(user)
-        }
+//        }
     }
 
     private fun captureFields(): User {
@@ -45,12 +46,21 @@ class RegisterActivity : BaseActivity(), Extensions {
     private fun register(user: User) {
         showLoading(true)
 
+        ServiceGenerator.authService.getToken(TokenRequest())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        { token -> goHome() },
+                        { error -> showLoading(false, error.message) })
+
+        /*
         userService.createUser(user.name, user.email, user.password, user.password)
-                .subscribeOn(Schedulers.newThread())
+                .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { responseBody -> goHome() },
                         { error -> showLoading(false, error.message) })
+                        */
     }
 
     private fun showLoading(l: Boolean, error: String? = "") {
