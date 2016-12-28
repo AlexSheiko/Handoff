@@ -48,7 +48,7 @@ class LoginActivity : BaseActivity() {
 
     private fun showLoading(l: Boolean, error: String? = "") {
         progressBar.visibility = if (l) View.VISIBLE else View.GONE
-        signInButton.enabled = if (l) false else true
+        signInButton.enabled = !l
         signInButton.alpha = if (l) 0.5f else 1.0f
         if (!error.isNullOrBlank()) longToast(R.string.error_login_network_2)
     }

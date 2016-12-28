@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.support.design.widget.BottomSheetBehavior
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
-import android.util.TypedValue
+import android.util.TypedValue.COMPLEX_UNIT_DIP
+import android.util.TypedValue.applyDimension
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -89,8 +90,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun dpToPixels(dp: Int): Int {
-        return TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), resources.displayMetrics).toInt()
+        return applyDimension(COMPLEX_UNIT_DIP, dp.toFloat(),
+                resources.displayMetrics).toInt()
     }
 
     companion object {

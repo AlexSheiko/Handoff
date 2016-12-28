@@ -1,5 +1,8 @@
 package com.example.handoff.util
 
+import android.content.Context
+import android.util.TypedValue.COMPLEX_UNIT_DIP
+import android.util.TypedValue.applyDimension
 import android.widget.EditText
 import com.example.handoff.R
 import com.example.handoff.api.model.Token
@@ -53,5 +56,10 @@ interface Extensions {
         return TokenRequest(
                 CLIENT_AUTH, SECRET_AUTH, GRANT_AUTH,
                 user.email, user.password)
+    }
+
+    fun Context.dpToPixels(dp: Int): Int {
+        return applyDimension(COMPLEX_UNIT_DIP, dp.toFloat(),
+                resources.displayMetrics).toInt()
     }
 }
