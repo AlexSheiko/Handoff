@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ui.main.DetailActivity"
+    tools:context=".ui.order.DetailActivity"
     tools:ignore="RtlHardcoded">
 
     <RelativeLayout

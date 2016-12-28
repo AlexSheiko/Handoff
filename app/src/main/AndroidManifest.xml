@@ -20,12 +20,12 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name="com.example.handoff.ui.main.AddOrderActivity"
+            android:name="com.example.handoff.ui.order.AddOrderActivity"
             android:label="@string/title_activity_order_add"
             android:parentActivityName="com.example.handoff.ui.main.MainActivity">
         </activity>
         <activity
-            android:name="com.example.handoff.ui.main.DetailActivity"
+            android:name="com.example.handoff.ui.order.DetailActivity"
             android:label="@string/title_activity_detail_pickup"
             android:parentActivityName="com.example.handoff.ui.main.MainActivity">
         </activity>

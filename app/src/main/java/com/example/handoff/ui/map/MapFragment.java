@@ -1,4 +1,4 @@
-package com.example.handoff.ui.main;
+package com.example.handoff.ui.map;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.handoff.R;
+import com.example.handoff.ui.order.AddOrderActivity;
+import com.example.handoff.ui.order.DetailActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

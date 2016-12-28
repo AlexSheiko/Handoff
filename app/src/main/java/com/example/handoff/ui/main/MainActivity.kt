@@ -9,6 +9,7 @@ import android.view.*
 import android.widget.TextView
 import com.example.handoff.R
 import com.example.handoff.ui.base.BaseActivity
+import com.example.handoff.ui.map.MapFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
