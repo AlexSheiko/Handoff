@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
+import com.example.handoff.api.Constants.BEARER
+import com.example.handoff.api.Constants.CLIENT_AUTH
 import com.example.handoff.api.Constants.GRANT_AUTH
 import com.example.handoff.api.Constants.KEY_TOKEN
+import com.example.handoff.api.Constants.SECRET_AUTH
 import com.example.handoff.api.ServiceGenerator.Companion.authService
 import com.example.handoff.api.ServiceGenerator.Companion.userService
 import com.example.handoff.api.model.Token
@@ -49,8 +52,8 @@ class RegisterActivity : BaseActivity() {
         showLoading(true)
 
         authService.getToken(TokenRequest())
-                .map { token -> userService.createUser(user, bearer(token)) }
-                .flatMap { authService.getToken(requestFor(user)) }
+                .flatMap { token -> userService.createUser(user, bearer(token)) }
+                .flatMap { body -> authService.getToken(requestFor(user)) }
                 .map { token -> saveToken(token) }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -65,13 +68,12 @@ class RegisterActivity : BaseActivity() {
 
     private fun requestFor(user: User): TokenRequest {
         return TokenRequest(
-                username = user.email,
-                password = user.password,
-                grant_type = GRANT_AUTH)
+                CLIENT_AUTH, SECRET_AUTH, GRANT_AUTH,
+                user.email, user.password)
     }
 
     private fun bearer(token: Token): String {
-        return "Bearer " + token.access_token
+        return BEARER + token.access_token
     }
 
     private fun showLoading(l: Boolean, error: String? = "") {
