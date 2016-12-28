@@ -1,6 +1,5 @@
 package com.example.handoff.main
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
@@ -12,6 +11,7 @@ import com.example.handoff.R
 import com.example.handoff.base.BaseActivity
 import com.example.handoff.signin.WelcomeActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.startActivity
 
 class MainActivity : BaseActivity() {
 
@@ -54,10 +54,10 @@ class MainActivity : BaseActivity() {
     }
 
     private fun logout() {
-        val intent = Intent(this, WelcomeActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
-        finish()
+        getPrefs().edit().clear().apply()
+
+        startActivity<WelcomeActivity>()
+        finishAffinity()
     }
 
     class PlaceholderFragment : Fragment() {
