@@ -1,5 +1,7 @@
 package com.appigo.todopro.ui.base
 
+import com.example.handoff.util.Extensions
+
 /**
  * Base class that implements the Presenter interface and provides a base implementation for
  * attachView() and detachView(). It also handles keeping a reference to the mvpView that

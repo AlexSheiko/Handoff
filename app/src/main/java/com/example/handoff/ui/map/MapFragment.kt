@@ -10,7 +10,10 @@ import android.util.TypedValue.applyDimension
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.appigo.todopro.ui.lists.MapMvpView
+import com.appigo.todopro.ui.lists.MapPresenter
 import com.example.handoff.R
+import com.example.handoff.api.model.Order
 import com.example.handoff.ui.order.AddOrderActivity
 import com.example.handoff.ui.order.DetailActivity
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -22,10 +25,11 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.*
 
-class MapFragment : Fragment(), OnMapReadyCallback {
+class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
 
     private var mMap: GoogleMap? = null
     private var mBottomSheetBehavior: BottomSheetBehavior<View>? = null
+    private var mPresenter = MapPresenter()
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -34,6 +38,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        mPresenter.attachView(this)
+        mPresenter.initView()
 
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -56,6 +63,11 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         view.findViewById(R.id.card2).setOnClickListener(listener)
         view.findViewById(R.id.card3).setOnClickListener(listener)
         view.findViewById(R.id.card4).setOnClickListener(listener)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        mPresenter.detachView()
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -98,5 +110,21 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         fun newInstance(): Fragment {
             return MapFragment()
         }
+    }
+
+    /**
+     * MVP method implementation
+     */
+
+    override fun showFeed(orders: List<Order>) {
+    }
+
+    override fun showAddOrder() {
+    }
+
+    override fun navigateToDetails(order: Order) {
+    }
+
+    override fun navigateToSettings() {
     }
 }
