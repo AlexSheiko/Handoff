@@ -5,10 +5,6 @@ import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
 import com.example.handoff.api.Constants.BEARER
-import com.example.handoff.api.Constants.CLIENT_AUTH
-import com.example.handoff.api.Constants.GRANT_AUTH
-import com.example.handoff.api.Constants.KEY_TOKEN
-import com.example.handoff.api.Constants.SECRET_AUTH
 import com.example.handoff.api.ServiceGenerator.Companion.authService
 import com.example.handoff.api.ServiceGenerator.Companion.userService
 import com.example.handoff.api.model.Token
@@ -60,16 +56,6 @@ class RegisterActivity : BaseActivity() {
                 .subscribe(
                         { goHome() },
                         { error -> showLoading(false, error.message) })
-    }
-
-    private fun saveToken(token: Token) {
-        getPrefs().edit().putString(KEY_TOKEN, token.access_token).apply()
-    }
-
-    private fun requestFor(user: User): TokenRequest {
-        return TokenRequest(
-                CLIENT_AUTH, SECRET_AUTH, GRANT_AUTH,
-                user.email, user.password)
     }
 
     private fun bearer(token: Token): String {

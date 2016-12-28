@@ -44,16 +44,20 @@
                 android:transitionName="logo"/>
 
             <EditText
+                android:id="@+id/email"
                 style="@style/InputField.Login"
                 android:layout_marginTop="24dp"
                 android:hint="Email Address"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress"
+                android:text="test@email.com"/>
 
             <EditText
+                android:id="@+id/password"
                 style="@style/InputField.Login"
                 android:fontFamily="sans-serif"
                 android:hint="Password"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:text="password"/>
 
             <Button
                 android:id="@+id/restoreButton"

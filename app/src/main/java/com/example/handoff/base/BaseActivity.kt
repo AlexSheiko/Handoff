@@ -13,8 +13,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.handoff.R
 import com.example.handoff.main.MainActivity
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.singleTop
+import org.jetbrains.anko.startActivity
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
 open class BaseActivity : AppCompatActivity(), Extensions {
@@ -51,8 +50,8 @@ open class BaseActivity : AppCompatActivity(), Extensions {
     }
 
     fun goHome() {
-        startActivity(intentFor<MainActivity>().singleTop())
-        finish()
+        startActivity<MainActivity>()
+        finishAffinity()
     }
 
     fun getPrefs(): SharedPreferences {

@@ -3,12 +3,16 @@ package com.example.handoff.signin
 import android.os.Bundle
 import android.view.View
 import com.example.handoff.R
+import com.example.handoff.api.ServiceGenerator.Companion.authService
+import com.example.handoff.api.model.User
 import com.example.handoff.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.enabled
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.toast
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
 
 class LoginActivity : BaseActivity() {
 
@@ -24,16 +28,22 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun signIn() {
+        if (valid(email, password)) {
+            val user = captureFields()
+            login(user)
+        }
+    }
+
+    private fun login(user: User) {
         showLoading(true)
 
-        /*
-        authService.getToken(TokenRequest())
+        authService.getToken(requestFor(user))
+                .map { token -> saveToken(token) }
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { token -> goHome() },
                         { error -> showLoading(false, error.message) })
-                        */
     }
 
     private fun showLoading(l: Boolean, error: String? = "") {
@@ -45,5 +55,11 @@ class LoginActivity : BaseActivity() {
 
     fun restore() {
         toast("Coming soon")
+    }
+
+    private fun captureFields(): User {
+        return User(
+                email = email.text.toString(),
+                password = password.text.toString())
     }
 }
