@@ -50,7 +50,7 @@ class LoginActivity : BaseActivity() {
         progressBar.visibility = if (l) View.VISIBLE else View.GONE
         signInButton.enabled = if (l) false else true
         signInButton.alpha = if (l) 0.5f else 1.0f
-        if (!error.isNullOrBlank()) longToast(R.string.error_login_network)
+        if (!error.isNullOrBlank()) longToast(R.string.error_login_network_2)
     }
 
     fun restore() {

@@ -66,6 +66,6 @@ class RegisterActivity : BaseActivity() {
         progressBar.visibility = if (l) VISIBLE else GONE
         signUpButton.enabled = if (l) false else true
         signUpButton.alpha = if (l) 0.5f else 1.0f
-        if (!error.isNullOrBlank()) longToast(R.string.error_login_network)
+        if (!error.isNullOrBlank()) longToast(R.string.error_login_network_2)
     }
 }

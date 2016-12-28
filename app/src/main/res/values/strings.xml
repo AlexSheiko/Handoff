@@ -8,5 +8,6 @@
     <string name="title_activity_detail_pickup">Item</string>
     <string name="error_required">Required field</string>
     <string name="error_login_network">Failed to log in, check your network connection</string>
+    <string name="error_login_network_2">Invalid credentials</string>
     <string name="action_logout">Logout</string>
 </resources>
