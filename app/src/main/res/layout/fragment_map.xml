@@ -42,7 +42,7 @@
         app:srcCompat="@drawable/ic_add_white_24dp"/>
 
     <android.support.v4.widget.NestedScrollView
-        android:id="@+id/bottom_sheet"
+        android:id="@+id/bottomSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#71000000"

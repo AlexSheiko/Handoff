@@ -10,4 +10,5 @@
     <string name="error_login_network">Failed to log in, check your network connection</string>
     <string name="error_login_network_2">Invalid credentials</string>
     <string name="action_logout">Logout</string>
+    <string name="login_hint"><![CDATA[Already have an account? <font color=\'#689F38\'><b>Log In</b></font>]]></string>
 </resources>
