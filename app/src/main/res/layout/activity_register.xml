@@ -47,26 +47,30 @@
                 style="@style/InputField.Login"
                 android:layout_marginTop="24dp"
                 android:hint="Full Name"
-                android:inputType="textPersonName|textCapWords"/>
+                android:inputType="textPersonName|textCapWords"
+                android:text="Test user"/>
 
             <EditText
                 android:id="@+id/phone"
                 style="@style/InputField.Login"
                 android:hint="Phone Number"
-                android:inputType="phone"/>
+                android:inputType="phone"
+                android:text="123456789"/>
 
             <EditText
                 android:id="@+id/email"
                 style="@style/InputField.Login"
                 android:hint="Email Address"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress"
+                android:text="test@email.com"/>
 
             <EditText
                 android:id="@+id/password"
                 style="@style/InputField.Login"
                 android:fontFamily="sans-serif"
                 android:hint="Password"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:text="password"/>
 
             <FrameLayout
                 android:layout_width="match_parent"

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
-import com.example.handoff.api.ServiceGenerator
+import com.example.handoff.api.ServiceGenerator.Companion.authService
 import com.example.handoff.api.model.TokenRequest
 import com.example.handoff.api.model.User
 import com.example.handoff.base.BaseActivity
@@ -29,10 +29,10 @@ class RegisterActivity : BaseActivity(), Extensions {
     }
 
     private fun signUp() {
-//        if (valid(password, email, phone, name)) {
+        if (valid(password, email, phone, name)) {
             val user = captureFields()
             register(user)
-//        }
+        }
     }
 
     private fun captureFields(): User {
@@ -46,7 +46,7 @@ class RegisterActivity : BaseActivity(), Extensions {
     private fun register(user: User) {
         showLoading(true)
 
-        ServiceGenerator.authService.getToken(TokenRequest())
+        authService.getToken(TokenRequest())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
