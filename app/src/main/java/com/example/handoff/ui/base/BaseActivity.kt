@@ -13,6 +13,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.handoff.R
 import com.example.handoff.ui.main.MainActivity
+import com.example.handoff.ui.signin.WelcomeActivity
 import com.example.handoff.util.Extensions
 import org.jetbrains.anko.startActivity
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
@@ -52,6 +53,11 @@ open class BaseActivity : AppCompatActivity(), Extensions {
 
     fun goHome() {
         startActivity<MainActivity>()
+        finishAffinity()
+    }
+
+    fun login() {
+        startActivity<WelcomeActivity>()
         finishAffinity()
     }
 

@@ -18,11 +18,6 @@
         <activity
             android:name="com.example.handoff.ui.main.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
             android:name="com.example.handoff.ui.main.AddOrderActivity"
@@ -41,6 +36,11 @@
         <activity
             android:name="com.example.handoff.ui.signin.WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar.Login.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.handoff.ui.signin.LoginActivity"

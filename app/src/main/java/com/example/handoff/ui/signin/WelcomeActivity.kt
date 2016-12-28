@@ -6,6 +6,7 @@ import android.text.Html
 import android.view.View
 import com.example.handoff.R
 import com.example.handoff.ui.base.BaseActivity
+import com.example.handoff.util.Constants.KEY_TOKEN
 import kotlinx.android.synthetic.main.activity_welcome.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
@@ -14,6 +15,15 @@ class WelcomeActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (loggedIn()) {
+            goHome()
+        } else {
+            initView()
+        }
+    }
+
+    private fun initView() {
         setContentView(R.layout.activity_welcome)
 
         transparentStatus()
@@ -34,6 +44,10 @@ class WelcomeActivity : BaseActivity() {
 //                Pair(signUpButton, "button")))
 //        startActivity(intent, options.toBundle())
         startActivity(intent)
+    }
+
+    private fun loggedIn(): Boolean {
+        return getPrefs().getString(KEY_TOKEN, "").isNotEmpty()
     }
 
     fun onClickFacebook(view: View) {

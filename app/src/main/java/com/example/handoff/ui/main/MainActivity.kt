@@ -9,10 +9,7 @@ import android.view.*
 import android.widget.TextView
 import com.example.handoff.R
 import com.example.handoff.ui.base.BaseActivity
-import com.example.handoff.ui.signin.WelcomeActivity
-import com.example.handoff.util.Constants.KEY_TOKEN
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.startActivity
 
 class MainActivity : BaseActivity() {
 
@@ -20,15 +17,9 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        if (!loggedIn()) {
-            login()
-            return
-        }
-
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
 
+        setSupportActionBar(toolbar)
         viewPager.adapter = mSectionsPagerAdapter
         viewPager.offscreenPageLimit = 3
 
@@ -42,7 +33,6 @@ class MainActivity : BaseActivity() {
         tabLayout.getTabAt(2)!!.setIcon(R.drawable.ic_shopping_cart_white_24dp)
         tabLayout.getTabAt(3)!!.setIcon(R.drawable.ic_view_list_white_24dp)
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -60,18 +50,9 @@ class MainActivity : BaseActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun loggedIn(): Boolean {
-        return getPrefs().getString(KEY_TOKEN, "").isNotEmpty()
-    }
-
     private fun logout() {
         getPrefs().edit().clear().apply()
         login()
-    }
-
-    private fun login() {
-        startActivity<WelcomeActivity>()
-        finishAffinity()
     }
 
     class PlaceholderFragment : Fragment() {
