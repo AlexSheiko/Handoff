@@ -7,8 +7,8 @@ import com.example.handoff.R
 import com.example.handoff.api.model.Token
 import com.example.handoff.api.model.TokenRequest
 import com.example.handoff.api.model.User
-import com.example.handoff.api.service.ServiceGenerator.Companion.authService
-import com.example.handoff.api.service.ServiceGenerator.Companion.userService
+import com.example.handoff.api.service.ServiceGenerator.authService
+import com.example.handoff.api.service.ServiceGenerator.userService
 import com.example.handoff.ui.base.BaseActivity
 import com.example.handoff.util.Constants.BEARER
 import kotlinx.android.synthetic.main.activity_register.*
@@ -64,7 +64,7 @@ class RegisterActivity : BaseActivity() {
 
     private fun showLoading(l: Boolean, error: String? = "") {
         progressBar.visibility = if (l) VISIBLE else GONE
-        signUpButton.enabled = if (l) false else true
+        signUpButton.enabled = !l
         signUpButton.alpha = if (l) 0.5f else 1.0f
         if (!error.isNullOrBlank()) longToast(R.string.error_login_network_2)
     }

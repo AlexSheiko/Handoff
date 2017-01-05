@@ -27,13 +27,13 @@ import kotlinx.android.synthetic.main.fragment_map.*
 
 class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
 
-    private var mMap: GoogleMap? = null
-    private var mBottomSheetBehavior: BottomSheetBehavior<View>? = null
     private var mPresenter = MapPresenter()
+    private var mBottomSheetBehavior: BottomSheetBehavior<View>? = null
+    private var mMap: GoogleMap? = null
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_map, container, false)
+        return inflater.inflate(R.layout.fragment_map, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,7 +46,7 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        fab.setOnClickListener { startActivity(Intent(activity, AddOrderActivity::class.java)) }
+        fab.setOnClickListener { mPresenter.onAddOrderClicked() }
 
         val bottomSheet = view.findViewById(R.id.bottomSheet)
         mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
@@ -120,6 +120,7 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
     }
 
     override fun showAddOrder() {
+        startActivity(Intent(activity, AddOrderActivity::class.java))
     }
 
     override fun navigateToDetails(order: Order) {

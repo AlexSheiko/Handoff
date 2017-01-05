@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.handoff.R
 import com.example.handoff.api.model.User
-import com.example.handoff.api.service.ServiceGenerator.Companion.authService
+import com.example.handoff.api.service.ServiceGenerator.authService
 import com.example.handoff.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.enabled
