@@ -1,7 +1,7 @@
-package com.example.handoff.api.service
+package com.example.handoff.api
 
-import com.example.handoff.api.model.Token
-import com.example.handoff.api.model.TokenRequest
+import com.example.handoff.data.model.Token
+import com.example.handoff.data.model.TokenRequest
 import retrofit2.http.Body
 import retrofit2.http.POST
 import rx.Observable

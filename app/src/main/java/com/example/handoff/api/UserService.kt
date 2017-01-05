@@ -1,6 +1,6 @@
-package com.example.handoff.api.service
+package com.example.handoff.api
 
-import com.example.handoff.api.model.User
+import com.example.handoff.data.model.User
 import okhttp3.ResponseBody
 import retrofit2.http.Body
 import retrofit2.http.GET

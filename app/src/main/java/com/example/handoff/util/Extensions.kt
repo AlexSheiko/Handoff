@@ -5,9 +5,9 @@ import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.util.TypedValue.applyDimension
 import android.widget.EditText
 import com.example.handoff.R
-import com.example.handoff.api.model.Token
-import com.example.handoff.api.model.TokenRequest
-import com.example.handoff.api.model.User
+import com.example.handoff.data.model.Token
+import com.example.handoff.data.model.TokenRequest
+import com.example.handoff.data.model.User
 import com.example.handoff.ui.base.BaseActivity
 import com.example.handoff.util.Constants.CLIENT_AUTH
 import com.example.handoff.util.Constants.GRANT_AUTH

@@ -1,4 +1,4 @@
-package com.example.handoff.api.service
+package com.example.handoff.api
 
 import com.example.handoff.util.Constants.BASE_URL
 import okhttp3.OkHttpClient
@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object ServiceGenerator {
+
     val authService = createService(AuthService::class.java)
     val userService = createService(UserService::class.java)
     val orderService = createService(OrderService::class.java)
@@ -20,9 +21,7 @@ object ServiceGenerator {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .client(loggingClient())
                 .build()
-        val service = restAdapter.create(clazz)
-
-        return service
+        return restAdapter.create(clazz)
     }
 
     private fun loggingClient(): OkHttpClient? {

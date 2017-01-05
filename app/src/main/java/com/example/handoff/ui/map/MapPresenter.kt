@@ -1,7 +1,7 @@
 package com.appigo.todopro.ui.lists
 
 import com.appigo.todopro.ui.base.BasePresenter
-import com.example.handoff.api.model.Order
+import com.example.handoff.data.model.Order
 
 class MapPresenter : BasePresenter<MapMvpView>() {
 

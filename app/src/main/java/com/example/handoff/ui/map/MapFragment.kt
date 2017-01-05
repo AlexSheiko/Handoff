@@ -13,7 +13,7 @@ import android.view.ViewGroup
 import com.appigo.todopro.ui.lists.MapMvpView
 import com.appigo.todopro.ui.lists.MapPresenter
 import com.example.handoff.R
-import com.example.handoff.api.model.Order
+import com.example.handoff.data.model.Order
 import com.example.handoff.ui.order.AddOrderActivity
 import com.example.handoff.ui.order.DetailActivity
 import com.google.android.gms.maps.CameraUpdateFactory

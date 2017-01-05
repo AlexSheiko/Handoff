@@ -1,4 +1,4 @@
-package com.example.handoff.api.model
+package com.example.handoff.data.model
 
 data class User(
         val name: String? = null,

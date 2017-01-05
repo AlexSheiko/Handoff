@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.example.handoff.R
-import com.example.handoff.api.model.Token
-import com.example.handoff.api.model.TokenRequest
-import com.example.handoff.api.model.User
-import com.example.handoff.api.service.ServiceGenerator.authService
-import com.example.handoff.api.service.ServiceGenerator.userService
+import com.example.handoff.api.ServiceGenerator.authService
+import com.example.handoff.api.ServiceGenerator.userService
+import com.example.handoff.data.model.Token
+import com.example.handoff.data.model.TokenRequest
+import com.example.handoff.data.model.User
 import com.example.handoff.ui.base.BaseActivity
 import com.example.handoff.util.Constants.BEARER
 import kotlinx.android.synthetic.main.activity_register.*
