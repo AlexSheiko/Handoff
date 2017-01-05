@@ -3,6 +3,7 @@ package com.example.handoff.ui.map
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomSheetBehavior
+import android.support.design.widget.BottomSheetBehavior.STATE_COLLAPSED
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
 import android.util.TypedValue.COMPLEX_UNIT_DIP
@@ -26,7 +27,6 @@ import kotlinx.android.synthetic.main.fragment_map.*
 class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
 
     private var mPresenter = MapPresenter()
-    private var mBottomSheetBehavior: BottomSheetBehavior<View>? = null
     private var mMap: GoogleMap? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -44,12 +44,16 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        fab.setOnClickListener { mPresenter.onAddOrderClicked() }
-
         val bottomSheet = view.findViewById(R.id.bottomSheet)
-        mBottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        mBottomSheetBehavior!!.peekHeight = dpToPixels(200)
-        mBottomSheetBehavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
+        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+        bottomSheetBehavior!!.peekHeight = dpToPixels(200)
+        bottomSheetBehavior.state = STATE_COLLAPSED
+
+        setOnClickListeners(view)
+    }
+
+    private fun setOnClickListeners(view: View) {
+        fab.setOnClickListener { mPresenter.onAddOrderClicked() }
 
         val listener = View.OnClickListener { view ->
             val productInfoContainer = view.findViewById(R.id.productInfoContainer)
