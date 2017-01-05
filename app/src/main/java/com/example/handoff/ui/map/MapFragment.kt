@@ -10,8 +10,6 @@ import android.util.TypedValue.applyDimension
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.appigo.todopro.ui.lists.MapMvpView
-import com.appigo.todopro.ui.lists.MapPresenter
 import com.example.handoff.R
 import com.example.handoff.data.model.Order
 import com.example.handoff.ui.order.AddOrderActivity

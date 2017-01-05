@@ -10,7 +10,7 @@ public class HandoffApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Init default font
+        // Init custom font
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
                 .setDefaultFontPath("fonts/Brandon-Regular.otf")
                 .setFontAttrId(R.attr.fontPath)
