@@ -19,7 +19,7 @@ class MapPresenter : BasePresenter<MapMvpView>() {
         mvpView?.navigateToDetails(order)
     }
 
-    fun onAddOrderClicked() {
+    fun createOrder() {
         mvpView?.showAddOrder()
     }
 }

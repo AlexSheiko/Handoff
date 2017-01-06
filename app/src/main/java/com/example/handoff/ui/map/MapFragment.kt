@@ -53,7 +53,7 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
     }
 
     private fun setOnClickListeners(view: View) {
-        fab.setOnClickListener { mPresenter.onAddOrderClicked() }
+        fab.setOnClickListener { mPresenter.createOrder() }
 
         val listener = View.OnClickListener { view ->
             val productInfoContainer = view.findViewById(R.id.productInfoContainer)
