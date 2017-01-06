@@ -6,11 +6,9 @@ import android.view.View.VISIBLE
 import com.example.handoff.R
 import com.example.handoff.api.ServiceGenerator.authService
 import com.example.handoff.api.ServiceGenerator.userService
-import com.example.handoff.data.model.Token
 import com.example.handoff.data.model.TokenRequest
 import com.example.handoff.data.model.User
 import com.example.handoff.ui.base.BaseActivity
-import com.example.handoff.util.Constants.BEARER
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.enabled
 import org.jetbrains.anko.longToast
@@ -56,10 +54,6 @@ class RegisterActivity : BaseActivity() {
                 .subscribe(
                         { goHome() },
                         { error -> showLoading(false, error.message) })
-    }
-
-    private fun bearer(token: Token): String {
-        return BEARER + token.access_token
     }
 
     private fun showLoading(l: Boolean, error: String? = "") {

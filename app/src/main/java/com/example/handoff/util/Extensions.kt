@@ -9,10 +9,12 @@ import com.example.handoff.data.model.Token
 import com.example.handoff.data.model.TokenRequest
 import com.example.handoff.data.model.User
 import com.example.handoff.ui.base.BaseActivity
+import com.example.handoff.util.Constants.BEARER
 import com.example.handoff.util.Constants.CLIENT_AUTH
 import com.example.handoff.util.Constants.GRANT_AUTH
 import com.example.handoff.util.Constants.KEY_TOKEN
 import com.example.handoff.util.Constants.SECRET_AUTH
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +51,8 @@ interface Extensions {
     }
 
     fun BaseActivity.saveToken(token: Token) {
-        getPrefs().edit().putString(KEY_TOKEN, token.access_token).apply()
+        val json = Gson().toJson(token)
+        getPrefs().edit().putString(KEY_TOKEN, json).apply()
     }
 
     fun requestFor(user: User): TokenRequest {
@@ -61,5 +64,9 @@ interface Extensions {
     fun Context.dpToPixels(dp: Int): Int {
         return applyDimension(COMPLEX_UNIT_DIP, dp.toFloat(),
                 resources.displayMetrics).toInt()
+    }
+
+    fun bearer(token: Token): String {
+        return BEARER + token.access_token
     }
 }

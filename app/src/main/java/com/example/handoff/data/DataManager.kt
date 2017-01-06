@@ -2,11 +2,13 @@ package com.example.handoff.data
 
 import com.example.handoff.api.ServiceGenerator.orderService
 import com.example.handoff.data.model.Order
+import com.example.handoff.data.model.Token
+import com.example.handoff.util.Extensions
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers.mainThread
 import rx.schedulers.Schedulers.io
 
-class DataManager {
+class DataManager : Extensions {
 
     fun getOrders(): Observable<List<Order>> {
 
@@ -19,7 +21,8 @@ class DataManager {
     }
 
     private fun getOrdersFromApi(): Observable<List<Order>> {
-        return orderService.orders()
+        val token = Token()
+        return orderService.orders(bearer(token))
                 .subscribeOn(io())
     }
 }
