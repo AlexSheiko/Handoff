@@ -2,10 +2,11 @@ package com.example.handoff.ui.map
 
 import com.appigo.todopro.ui.base.MvpView
 import com.example.handoff.data.model.Order
+import rx.Observable
 
 interface MapMvpView : MvpView {
 
-    fun showFeed(orders: List<Order>)
+    fun showOrders(orders: Observable<List<Order>>)
 
     fun showAddOrder()
 

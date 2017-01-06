@@ -1,6 +1,7 @@
 package com.example.handoff.ui.map
 
 import com.appigo.todopro.ui.base.BasePresenter
+import com.example.handoff.data.DataManager
 import com.example.handoff.data.model.Order
 
 class MapPresenter : BasePresenter<MapMvpView>() {
@@ -9,10 +10,10 @@ class MapPresenter : BasePresenter<MapMvpView>() {
         checkViewAttached()
     }
 
-    fun loadFeed() {
-        // TODO: Get from repository
-        // val feed = mDataManager.feed
-        // mvpView?.showFeed(feed)
+
+    fun loadOrders() {
+        val orders = DataManager().getOrders()
+        mvpView?.showOrders(orders)
     }
 
     fun onOrderClicked(order: Order) {

@@ -23,6 +23,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.*
+import rx.Observable
 
 class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
 
@@ -118,7 +119,7 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
      * MVP method implementation
      */
 
-    override fun showFeed(orders: List<Order>) {
+    override fun showOrders(orders: Observable<List<Order>>) {
     }
 
     override fun showAddOrder() {
