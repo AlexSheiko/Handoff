@@ -1,6 +1,9 @@
 package com.example.handoff.util
 
+import android.app.Activity
 import android.content.Context
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.util.TypedValue.applyDimension
 import android.widget.EditText
@@ -8,7 +11,6 @@ import com.example.handoff.R
 import com.example.handoff.data.model.Token
 import com.example.handoff.data.model.TokenRequest
 import com.example.handoff.data.model.User
-import com.example.handoff.ui.base.BaseActivity
 import com.example.handoff.util.Constants.BEARER
 import com.example.handoff.util.Constants.CLIENT_AUTH
 import com.example.handoff.util.Constants.GRANT_AUTH
@@ -50,9 +52,18 @@ interface Extensions {
         field.requestFocus()
     }
 
-    fun BaseActivity.saveToken(token: Token) {
+    fun Context.getPrefs(): SharedPreferences {
+        return PreferenceManager.getDefaultSharedPreferences(this)
+    }
+
+    fun Activity.saveToken(token: Token) {
         val json = Gson().toJson(token)
         getPrefs().edit().putString(KEY_TOKEN, json).apply()
+    }
+
+    fun Activity.getToken(): Token {
+        val json = getPrefs().getString(KEY_TOKEN, "")
+        return Gson().fromJson(json, Token::class.java)
     }
 
     fun requestFor(user: User): TokenRequest {

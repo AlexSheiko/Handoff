@@ -3,11 +3,12 @@ package com.example.handoff.ui.map
 import com.appigo.todopro.ui.base.BasePresenter
 import com.example.handoff.data.DataManager
 import com.example.handoff.data.model.Order
+import com.example.handoff.data.model.Token
 
 class MapPresenter : BasePresenter<MapMvpView>() {
 
-    fun loadOrders() {
-        val orders = DataManager().getOrders()
+    fun loadOrders(token: Token) {
+        val orders = DataManager().getOrders(token)
         mvpView?.showOrders(orders)
     }
 

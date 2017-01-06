@@ -1,11 +1,9 @@
 package com.example.handoff.ui.base
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.KITKAT
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
 import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
@@ -59,9 +57,5 @@ open class BaseActivity : AppCompatActivity(), Extensions {
     fun login() {
         startActivity<WelcomeActivity>()
         finishAffinity()
-    }
-
-    fun getPrefs(): SharedPreferences {
-        return PreferenceManager.getDefaultSharedPreferences(this)
     }
 }

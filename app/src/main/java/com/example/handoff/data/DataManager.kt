@@ -10,9 +10,9 @@ import rx.schedulers.Schedulers.io
 
 class DataManager : Extensions {
 
-    fun getOrders(): Observable<List<Order>> {
+    fun getOrders(token: Token): Observable<List<Order>> {
 
-        val ordersApi = getOrdersFromApi()
+        val ordersApi = getOrdersFromApi(token)
         // TODO: Get orders from database
         // TODO: Concat API and DB observables
 
@@ -20,8 +20,7 @@ class DataManager : Extensions {
                 .observeOn(mainThread())
     }
 
-    private fun getOrdersFromApi(): Observable<List<Order>> {
-        val token = Token()
+    private fun getOrdersFromApi(token: Token): Observable<List<Order>> {
         return orderService.orders(bearer(token))
                 .subscribeOn(io())
     }

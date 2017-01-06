@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.handoff.R
 import com.example.handoff.data.model.Order
+import com.example.handoff.ui.base.BaseFragment
 import com.example.handoff.ui.order.AddOrderActivity
 import com.example.handoff.ui.order.DetailActivity
 import com.example.handoff.ui.signin.WelcomeActivity
@@ -25,12 +26,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.*
-import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.debug
 import org.jetbrains.anko.startActivity
 import rx.Observable
 
-class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback, AnkoLogger {
+class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
     private var mPresenter = MapPresenter()
     private lateinit var mMap: GoogleMap
@@ -44,7 +44,7 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback, AnkoLogger {
         super.onViewCreated(view, savedInstanceState)
 
         mPresenter.attachView(this)
-        mPresenter.loadOrders()
+        mPresenter.loadOrders(activity.getToken())
 
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
