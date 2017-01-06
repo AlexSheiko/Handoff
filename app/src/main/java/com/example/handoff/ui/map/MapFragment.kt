@@ -6,6 +6,7 @@ import android.support.design.widget.BottomSheetBehavior
 import android.support.design.widget.BottomSheetBehavior.STATE_COLLAPSED
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
+import android.util.MalformedJsonException
 import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.util.TypedValue.applyDimension
 import android.view.LayoutInflater
@@ -123,9 +124,15 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback, AnkoLogger {
 
     override fun showOrders(obs: Observable<List<Order>>) {
         obs.flatMap { Observable.from(it) }
-                .subscribe(
-                        { debug(it.destination_id) },
-                        Throwable::printStackTrace)
+                .subscribe({ debug(it.destination_id) },
+                        { t -> handleError(t) })
+    }
+
+    private fun handleError(t: Throwable) {
+        if (t is MalformedJsonException) {
+            // TODO: Refresh access token
+        }
+        t.printStackTrace()
     }
 
     override fun showAddOrder() {
