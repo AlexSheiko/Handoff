@@ -13,6 +13,7 @@ open class BasePresenter<T : MvpView> : Presenter<T>, Extensions {
 
     override fun attachView(mvpView: T) {
         this.mvpView = mvpView
+        checkViewAttached()
     }
 
     override fun detachView() {

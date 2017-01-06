@@ -6,7 +6,7 @@ import rx.Observable
 
 interface MapMvpView : MvpView {
 
-    fun showOrders(orders: Observable<List<Order>>)
+    fun showOrders(obs: Observable<List<Order>>)
 
     fun showAddOrder()
 

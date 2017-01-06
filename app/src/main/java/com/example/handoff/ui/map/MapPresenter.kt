@@ -6,11 +6,6 @@ import com.example.handoff.data.model.Order
 
 class MapPresenter : BasePresenter<MapMvpView>() {
 
-    fun initView() {
-        checkViewAttached()
-    }
-
-
     fun loadOrders() {
         val orders = DataManager().getOrders()
         mvpView?.showOrders(orders)

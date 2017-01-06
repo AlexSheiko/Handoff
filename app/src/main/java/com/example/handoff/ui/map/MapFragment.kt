@@ -23,9 +23,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.*
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.debug
 import rx.Observable
 
-class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
+class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback, AnkoLogger {
 
     private var mPresenter = MapPresenter()
     private lateinit var mMap: GoogleMap
@@ -39,7 +41,7 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState)
 
         mPresenter.attachView(this)
-        mPresenter.initView()
+        mPresenter.loadOrders()
 
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -119,7 +121,11 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
      * MVP method implementation
      */
 
-    override fun showOrders(orders: Observable<List<Order>>) {
+    override fun showOrders(obs: Observable<List<Order>>) {
+        obs.flatMap { Observable.from(it) }
+                .subscribe(
+                        { debug(it.destination_id) },
+                        Throwable::printStackTrace)
     }
 
     override fun showAddOrder() {
