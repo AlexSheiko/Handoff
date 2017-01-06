@@ -2,11 +2,11 @@ package com.example.handoff.ui.map
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.design.widget.BottomSheetBehavior
 import android.support.design.widget.BottomSheetBehavior.STATE_COLLAPSED
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
-import android.util.MalformedJsonException
 import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.util.TypedValue.applyDimension
 import android.view.LayoutInflater
@@ -16,6 +16,7 @@ import com.example.handoff.R
 import com.example.handoff.data.model.Order
 import com.example.handoff.ui.order.AddOrderActivity
 import com.example.handoff.ui.order.DetailActivity
+import com.example.handoff.ui.signin.WelcomeActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -26,6 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.debug
+import org.jetbrains.anko.startActivity
 import rx.Observable
 
 class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback, AnkoLogger {
@@ -129,10 +131,18 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback, AnkoLogger {
     }
 
     private fun handleError(t: Throwable) {
-        if (t is MalformedJsonException) {
-            // TODO: Refresh access token
+        if (t.message.toString().contains("malformed")) {
+            // TODO: Refresh access token goo.gl/3Cc3kE
+            logout() // TODO: Remove after refreshing tokens
         }
         t.printStackTrace()
+    }
+
+    private fun logout() {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(activity)
+        prefs.edit().clear().apply()
+        activity.startActivity<WelcomeActivity>()
+        activity.finishAffinity()
     }
 
     override fun showAddOrder() {
