@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_map.*
 class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
 
     private var mPresenter = MapPresenter()
-    private var mMap: GoogleMap? = null
+    private lateinit var mMap: GoogleMap
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -74,32 +74,32 @@ class MapFragment : Fragment(), MapMvpView, OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        mMap!!.isBuildingsEnabled = false
+        mMap.isBuildingsEnabled = false
 
         // Add a marker in Hong Kong and move the camera
         val hongKong = LatLng(22.2847202, 114.153556)
-        mMap!!.addMarker(MarkerOptions().position(hongKong).title("You are here")
+        mMap.addMarker(MarkerOptions().position(hongKong).title("You are here")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_current_position)))
-        mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 18f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 18f))
 
         addDummyMarkers()
     }
 
     private fun addDummyMarkers() {
         val marker1 = LatLng(22.285752, 114.153876)
-        mMap!!.addMarker(MarkerOptions().position(marker1).title("Additional Marker")
+        mMap.addMarker(MarkerOptions().position(marker1).title("Additional Marker")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
 
         val marker2 = LatLng(22.283837, 114.153856)
-        mMap!!.addMarker(MarkerOptions().position(marker2).title("Additional Marker")
+        mMap.addMarker(MarkerOptions().position(marker2).title("Additional Marker")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
 
         val marker3 = LatLng(22.282815, 114.155760)
-        mMap!!.addMarker(MarkerOptions().position(marker3).title("Additional Marker")
+        mMap.addMarker(MarkerOptions().position(marker3).title("Additional Marker")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
 
         val marker4 = LatLng(22.285253, 114.152930)
-        mMap!!.addMarker(MarkerOptions().position(marker4).title("Additional Marker")
+        mMap.addMarker(MarkerOptions().position(marker4).title("Additional Marker")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
     }
 
