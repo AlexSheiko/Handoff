@@ -11,6 +11,8 @@ class DataManager {
     fun getOrders(): Observable<List<Order>> {
 
         val ordersApi = getOrdersFromApi()
+        // TODO: Get orders from database
+        // TODO: Contact API and DB observables
 
         return ordersApi
                 .observeOn(mainThread())
