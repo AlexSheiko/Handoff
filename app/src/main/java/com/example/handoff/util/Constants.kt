@@ -6,12 +6,11 @@ object Constants {
     val BEARER = "Bearer "
     val KEY_TOKEN = "token"
 
-    val CLIENT_USER = "2"
-    val CLIENT_PUBLIC = "3"
+    val USER_CLIENT = "2"
+    val USER_SECRET = "ZjE06oApwHzlqVMBCM4m1R0XnfbLb4AgyMX9HGns"
+    val USER_GRANT = "client_credentials"
 
-    val SECRET_USER = "ZjE06oApwHzlqVMBCM4m1R0XnfbLb4AgyMX9HGns"
-    val SECRET_PUBLIC = "nm89icirRGCrxUctufd23TSSgfhquB0PT71xY8AU"
-
-    val GRANT_USER = "client_credentials"
-    val GRANT_PUBLIC = "password"
+    val PUBLIC_CLIENT = "3"
+    val PUBLIC_SECRET = "nm89icirRGCrxUctufd23TSSgfhquB0PT71xY8AU"
+    val PUBLIC_GRANT = "password"
 }

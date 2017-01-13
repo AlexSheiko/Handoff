@@ -12,10 +12,10 @@ import com.example.handoff.data.model.Token
 import com.example.handoff.data.model.TokenRequest
 import com.example.handoff.data.model.User
 import com.example.handoff.util.Constants.BEARER
-import com.example.handoff.util.Constants.CLIENT_USER
-import com.example.handoff.util.Constants.GRANT_PUBLIC
 import com.example.handoff.util.Constants.KEY_TOKEN
-import com.example.handoff.util.Constants.SECRET_USER
+import com.example.handoff.util.Constants.PUBLIC_GRANT
+import com.example.handoff.util.Constants.USER_CLIENT
+import com.example.handoff.util.Constants.USER_SECRET
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
@@ -68,7 +68,7 @@ interface Extensions {
 
     fun requestFor(user: User): TokenRequest {
         return TokenRequest(
-                CLIENT_USER, SECRET_USER, GRANT_PUBLIC,
+                USER_CLIENT, USER_SECRET, PUBLIC_GRANT,
                 user.email, user.password)
     }
 
