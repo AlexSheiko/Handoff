@@ -22,6 +22,7 @@ class DataManager : Extensions {
 
     private fun getOrdersFromApi(token: Token): Observable<List<Order>> {
         return orderService.orders(bearer(token))
+                .map { it.orders }
                 .subscribeOn(io())
     }
 }

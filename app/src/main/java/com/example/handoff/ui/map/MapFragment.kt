@@ -135,7 +135,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
             // TODO: Refresh access token goo.gl/3Cc3kE
             logout() // TODO: Remove after refreshing tokens
         }
-        t.printStackTrace()
+        throw t // TODO: Replace with t.printStackTrace()
     }
 
     private fun logout() {
