@@ -3,6 +3,8 @@ package com.example.handoff.util
 object Constants {
 
     val BASE_URL = "http://test.handoff.com.hk/"
+    val BEARER = "Bearer "
+    val KEY_TOKEN = "token"
 
     val CLIENT_USER = "2"
     val CLIENT_PUBLIC = "3"
@@ -12,8 +14,4 @@ object Constants {
 
     val GRANT_USER = "client_credentials"
     val GRANT_PUBLIC = "password"
-
-    val BEARER = "Bearer "
-
-    val KEY_TOKEN = "token"
 }
