@@ -22,8 +22,8 @@ class RegisterActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        transparentStatus()
-        load(backgroundImageView)
+        transparentStatusBar()
+        load(backgroundImage)
 
         signUpButton.onClick { signUp() }
     }

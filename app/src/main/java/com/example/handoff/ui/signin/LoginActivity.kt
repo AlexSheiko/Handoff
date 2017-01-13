@@ -20,8 +20,8 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        transparentStatus()
-        load(backgroundImageView)
+        transparentStatusBar()
+        load(backgroundImage)
 
         signInButton.onClick { signIn() }
         restoreButton.onClick { restore() }

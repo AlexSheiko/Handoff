@@ -36,7 +36,7 @@ open class BaseActivity : AppCompatActivity(), Extensions {
         }
     }
 
-    fun transparentStatus() {
+    fun transparentStatusBar() {
         if (SDK_INT >= KITKAT) {
             window.setFlags(FLAG_LAYOUT_NO_LIMITS, FLAG_LAYOUT_NO_LIMITS)
         }

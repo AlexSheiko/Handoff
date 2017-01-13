@@ -28,8 +28,8 @@ class WelcomeActivity : BaseActivity() {
     private fun initView() {
         setContentView(R.layout.activity_welcome)
 
-        transparentStatus()
-        load(backgroundImageView)
+        transparentStatusBar()
+        load(backgroundImage)
 
         highlightLogin()
     }
