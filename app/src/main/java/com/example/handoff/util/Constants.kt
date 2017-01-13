@@ -8,9 +8,9 @@ object Constants {
 
     val USER_CLIENT = "2"
     val USER_SECRET = "ZjE06oApwHzlqVMBCM4m1R0XnfbLb4AgyMX9HGns"
-    val USER_GRANT = "client_credentials"
+    val USER_GRANT = "password"
 
     val PUBLIC_CLIENT = "3"
     val PUBLIC_SECRET = "nm89icirRGCrxUctufd23TSSgfhquB0PT71xY8AU"
-    val PUBLIC_GRANT = "password"
+    val PUBLIC_GRANT = "client_credentials"
 }
