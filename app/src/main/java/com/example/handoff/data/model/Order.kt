@@ -1,5 +1,9 @@
 package com.example.handoff.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Order(
-        val user_id: String,
-        val destination_id: String)
+        @SerializedName("user_id")
+        val user: User,
+        @SerializedName("destination_id")
+        val where: Destination)
