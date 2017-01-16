@@ -6,4 +6,4 @@ data class Order(
         @SerializedName("user_id")
         val user: User,
         @SerializedName("destination_id")
-        val where: Destination)
+        val destination: Destination)

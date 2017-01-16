@@ -4,7 +4,7 @@ import android.app.Application
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
-class HandoffApp : Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
