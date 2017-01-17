@@ -43,19 +43,28 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mPresenter.attachView(this)
-        mPresenter.loadOrders(activity.getToken())
+        initPresenter()
+        initMapFragment()
+        initBottomSheet(view)
+        setOnClickListeners(view)
+    }
 
-        val mapFragment = childFragmentManager
-                .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
-
+    private fun initBottomSheet(view: View) {
         val bottomSheet = view.findViewById(R.id.bottomSheet)
         val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior!!.peekHeight = dpToPixels(200)
         bottomSheetBehavior.state = STATE_COLLAPSED
+    }
 
-        setOnClickListeners(view)
+    private fun initMapFragment() {
+        val mapFragment = childFragmentManager
+                .findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+    private fun initPresenter() {
+        mPresenter.attachView(this)
+        mPresenter.loadOrders(activity.getToken())
     }
 
     private fun setOnClickListeners(view: View) {
