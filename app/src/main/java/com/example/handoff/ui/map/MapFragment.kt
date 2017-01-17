@@ -45,15 +45,15 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
         initPresenter()
         initMapFragment()
-        initBottomSheet(view)
+        initBottomSheet()
+
         setOnClickListeners(view)
     }
 
-    private fun initBottomSheet(view: View) {
-        val bottomSheet = view.findViewById(R.id.bottomSheet)
-        val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior!!.peekHeight = dpToPixels(200)
-        bottomSheetBehavior.state = STATE_COLLAPSED
+    private fun initBottomSheet() {
+        val behavior = BottomSheetBehavior.from(bottomSheet)
+        behavior.peekHeight = dpToPixels(200)
+        behavior.state = STATE_COLLAPSED
     }
 
     private fun initMapFragment() {
