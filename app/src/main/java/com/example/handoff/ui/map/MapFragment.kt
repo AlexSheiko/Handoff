@@ -28,14 +28,15 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.maps.android.clustering.ClusterManager
 import kotlinx.android.synthetic.main.fragment_map.*
-import org.jetbrains.anko.debug
 import org.jetbrains.anko.startActivity
 import rx.Observable
+import java.util.concurrent.TimeUnit
 
 class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
     private var mPresenter = MapPresenter()
     lateinit var mClusterManager: ClusterManager<Destination>
+    lateinit var mMap: GoogleMap
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -90,6 +91,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
     }
 
     override fun onMapReady(map: GoogleMap) {
+        mMap = map
         map.isBuildingsEnabled = false
 
         // Add a marker in Hong Kong and move the camera
@@ -99,6 +101,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 18f))
 
         mClusterManager = ClusterManager<Destination>(activity, map)
+        map.setOnCameraIdleListener(mClusterManager)
         map.setOnMarkerClickListener(mClusterManager)
     }
 
@@ -119,7 +122,8 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
     override fun showOrders(obs: Observable<List<Order>>) {
         obs.flatMap { Observable.from(it) }
-                .doOnNext { debug(it.destination.id) }
+                .delay(1, TimeUnit.SECONDS)
+                .doOnNext { mClusterManager.addItem(it.destination) }
                 .subscribe({}, { t -> handleError(t) })
     }
 
