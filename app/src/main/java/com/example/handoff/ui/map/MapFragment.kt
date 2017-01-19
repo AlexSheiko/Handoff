@@ -111,6 +111,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
         mMap = map
         map.isBuildingsEnabled = false
         map.isMyLocationEnabled = true
+        map.setPadding(0, dpToPixels(64), dpToPixels(4), 0)
 
         // Add a marker in Hong Kong and move the camera
         val hongKong = LatLng(22.2847202, 114.153556)
@@ -150,7 +151,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
             // TODO: Refresh access token goo.gl/3Cc3kE
             logout() // TODO: Remove after refreshing tokens
         }
-        throw t // TODO: Replace with t.printStackTrace()
+        t.printStackTrace()
     }
 
     private fun logout() {
