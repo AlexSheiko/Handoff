@@ -100,26 +100,6 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
         mClusterManager = ClusterManager<Destination>(activity, map)
         map.setOnMarkerClickListener(mClusterManager)
-
-        addDummyMarkers(map)
-    }
-
-    private fun addDummyMarkers(map: GoogleMap) {
-        val marker1 = LatLng(22.285752, 114.153876)
-        map.addMarker(MarkerOptions().position(marker1).title("Additional Marker")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
-
-        val marker2 = LatLng(22.283837, 114.153856)
-        map.addMarker(MarkerOptions().position(marker2).title("Additional Marker")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
-
-        val marker3 = LatLng(22.282815, 114.155760)
-        map.addMarker(MarkerOptions().position(marker3).title("Additional Marker")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
-
-        val marker4 = LatLng(22.285253, 114.152930)
-        map.addMarker(MarkerOptions().position(marker4).title("Additional Marker")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_pickup)))
     }
 
     private fun dpToPixels(dp: Int): Int {
