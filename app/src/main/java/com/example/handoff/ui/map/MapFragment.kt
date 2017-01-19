@@ -23,13 +23,9 @@ import com.example.handoff.ui.base.BaseFragment
 import com.example.handoff.ui.order.AddOrderActivity
 import com.example.handoff.ui.order.DetailActivity
 import com.example.handoff.ui.signin.WelcomeActivity
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.google.maps.android.clustering.ClusterManager
 import kotlinx.android.synthetic.main.fragment_map.*
 import org.jetbrains.anko.startActivity
@@ -112,12 +108,6 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
         map.isBuildingsEnabled = false
         map.isMyLocationEnabled = true
         map.setPadding(0, dpToPixels(64), dpToPixels(4), 0)
-
-        // Add a marker in Hong Kong and move the camera
-        val hongKong = LatLng(22.2847202, 114.153556)
-        map.addMarker(MarkerOptions().position(hongKong).title("You are here")
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_current_position)))
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 18f))
 
         mClusterManager = ClusterManager<Destination>(activity, map)
         map.setOnCameraIdleListener(mClusterManager)
