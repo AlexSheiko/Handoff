@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.handoff.R
+import com.example.handoff.data.model.Destination
 import com.example.handoff.data.model.Order
 import com.example.handoff.ui.base.BaseFragment
 import com.example.handoff.ui.order.AddOrderActivity
@@ -25,6 +26,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.maps.android.clustering.ClusterManager
 import kotlinx.android.synthetic.main.fragment_map.*
 import org.jetbrains.anko.debug
 import org.jetbrains.anko.startActivity
@@ -33,6 +35,7 @@ import rx.Observable
 class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
     private var mPresenter = MapPresenter()
+    lateinit var mClusterManager: ClusterManager<Destination>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -94,6 +97,9 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
         map.addMarker(MarkerOptions().position(hongKong).title("You are here")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_current_position)))
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(hongKong, 18f))
+
+        mClusterManager = ClusterManager<Destination>(activity, map)
+        map.setOnMarkerClickListener(mClusterManager)
 
         addDummyMarkers(map)
     }
