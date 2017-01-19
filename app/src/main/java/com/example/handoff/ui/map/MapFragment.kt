@@ -1,12 +1,16 @@
 package com.example.handoff.ui.map
 
+import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.BottomSheetBehavior
 import android.support.design.widget.BottomSheetBehavior.STATE_COLLAPSED
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.util.TypedValue.applyDimension
 import android.view.LayoutInflater
@@ -59,10 +63,23 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
         behavior.state = STATE_COLLAPSED
     }
 
-    private fun initMapFragment() {
+    fun initMapFragment() {
+        if (ContextCompat.checkSelfPermission(activity, ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, arrayOf(ACCESS_FINE_LOCATION), 1)
+            return
+        }
         val mapFragment = childFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (grantResults.isNotEmpty()
+                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            initMapFragment()
+        }
     }
 
     private fun initPresenter() {
@@ -93,6 +110,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
     override fun onMapReady(map: GoogleMap) {
         mMap = map
         map.isBuildingsEnabled = false
+        map.isMyLocationEnabled = true
 
         // Add a marker in Hong Kong and move the camera
         val hongKong = LatLng(22.2847202, 114.153556)
