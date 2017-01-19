@@ -134,8 +134,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
     override fun showOrders(obs: Observable<List<Order>>) {
         obs.flatMap { Observable.from(it) }
                 .doOnNext { debug(it.destination.id) }
-                .subscribe({},
-                        { t -> handleError(t) })
+                .subscribe({}, { t -> handleError(t) })
     }
 
     private fun handleError(t: Throwable) {
