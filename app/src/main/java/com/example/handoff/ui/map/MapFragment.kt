@@ -23,14 +23,16 @@ import com.example.handoff.ui.base.BaseFragment
 import com.example.handoff.ui.order.AddOrderActivity
 import com.example.handoff.ui.order.DetailActivity
 import com.example.handoff.ui.signin.WelcomeActivity
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.maps.android.clustering.ClusterManager
 import kotlinx.android.synthetic.main.fragment_map.*
 import org.jetbrains.anko.startActivity
 import rx.Observable
-import java.util.concurrent.TimeUnit
+
 
 class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
@@ -130,10 +132,18 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
      */
 
     override fun showOrders(obs: Observable<List<Order>>) {
+        val builder = LatLngBounds.Builder()
         obs.flatMap { Observable.from(it) }
-                .delay(1, TimeUnit.SECONDS)
-                .doOnNext { mClusterManager.addItem(it.destination) }
-                .subscribe({}, { t -> handleError(t) })
+                .doOnNext {
+                    mClusterManager.addItem(it.destination)
+                    builder.include(it.destination.position)
+                }
+                .subscribe({
+                    val bounds = builder.build()
+                    val padding = 100 // offset from edges of the map in pixels
+                    val cu = CameraUpdateFactory.newLatLngBounds(bounds, padding)
+                    mMap.animateCamera(cu);
+                }, { t -> handleError(t) })
     }
 
     private fun handleError(t: Throwable) {
