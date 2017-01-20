@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.design.widget.BottomSheetBehavior
 import android.support.design.widget.BottomSheetBehavior.STATE_COLLAPSED
-import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -32,7 +31,6 @@ import com.google.maps.android.clustering.ClusterManager
 import kotlinx.android.synthetic.main.fragment_map.*
 import org.jetbrains.anko.startActivity
 import rx.Observable
-
 
 class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
 
@@ -64,7 +62,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
     fun initMapFragment() {
         if (ContextCompat.checkSelfPermission(activity, ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(activity, arrayOf(ACCESS_FINE_LOCATION), 1)
+            requestPermissions(arrayOf(ACCESS_FINE_LOCATION), 1)
             return
         }
         val mapFragment = childFragmentManager
@@ -76,6 +74,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (grantResults.isNotEmpty()
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            initPresenter()
             initMapFragment()
         }
     }
