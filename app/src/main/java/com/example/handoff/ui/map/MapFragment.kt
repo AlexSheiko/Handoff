@@ -109,7 +109,7 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
         mMap = map
         map.isBuildingsEnabled = false
         map.isMyLocationEnabled = true
-        map.setPadding(0, dpToPixels(64), dpToPixels(4), 0)
+        map.setPadding(0, dpToPixels(150), dpToPixels(4), dpToPixels(250))
 
         mClusterManager = ClusterManager<Destination>(activity, map)
         map.setOnCameraIdleListener(mClusterManager)
@@ -140,9 +140,9 @@ class MapFragment : BaseFragment(), MapMvpView, OnMapReadyCallback {
                 }
                 .subscribe({
                     val bounds = builder.build()
-                    val padding = 100 // offset from edges of the map in pixels
+                    val padding = 0
                     val cu = CameraUpdateFactory.newLatLngBounds(bounds, padding)
-                    mMap.animateCamera(cu);
+                    mMap.animateCamera(cu)
                 }, { t -> handleError(t) })
     }
 
