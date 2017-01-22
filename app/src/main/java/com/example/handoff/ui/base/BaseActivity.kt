@@ -6,7 +6,6 @@ import android.os.Build.VERSION_CODES.KITKAT
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.handoff.R
@@ -27,13 +26,6 @@ open class BaseActivity : AppCompatActivity(), Extensions {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        transparentNavigation()
-    }
-
-    fun transparentNavigation() {
-        if (SDK_INT >= KITKAT) {
-            window.setFlags(FLAG_TRANSLUCENT_NAVIGATION, FLAG_TRANSLUCENT_NAVIGATION)
-        }
     }
 
     fun transparentStatusBar() {
