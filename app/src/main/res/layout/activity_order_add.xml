@@ -22,15 +22,14 @@
             android:id="@+id/pickupField"
             style="@style/InputField.Border"
             android:layout_marginTop="8dp"
-            android:hint="Pickup"
-            android:inputType="textPostalAddress|textCapSentences"/>
+            android:focusable="false"
+            android:hint="Pickup"/>
 
         <EditText
             android:id="@+id/handoffField"
             style="@style/InputField.Border"
             android:focusable="false"
-            android:hint="Handoff"
-            android:nextFocusDown="@+id/dateLabel"/>
+            android:hint="Handoff"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -121,12 +120,12 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/orderButton"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="200dp"
             android:layout_height="56dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
-            android:onClick="onClickOrder"
             android:text="register order"/>
 
     </LinearLayout>
