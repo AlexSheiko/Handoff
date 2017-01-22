@@ -42,7 +42,6 @@
 
     <style name="InputField.Border">
         <item name="android:background">@drawable/background_field</item>
-        <item name="android:textColorHint">#b3000000</item>
     </style>
 
     <style name="InputField.Login">

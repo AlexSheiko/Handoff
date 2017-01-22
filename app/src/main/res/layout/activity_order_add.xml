@@ -22,14 +22,14 @@
             android:id="@+id/pickupField"
             style="@style/InputField.Border"
             android:layout_marginTop="8dp"
-            android:inputType="textPostalAddress|textCapSentences"
-            android:text="Your current location"/>
+            android:hint="Pickup"
+            android:inputType="textPostalAddress|textCapSentences"/>
 
         <EditText
             android:id="@+id/handoffField"
             style="@style/InputField.Border"
-            android:nextFocusDown="@+id/dateLabel"
-            android:text="HK Central 2584"/>
+            android:hint="Handoff"
+            android:nextFocusDown="@+id/dateLabel"/>
 
         <LinearLayout
             android:layout_width="match_parent"
