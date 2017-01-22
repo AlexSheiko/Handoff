@@ -28,6 +28,7 @@
         <EditText
             android:id="@+id/handoffField"
             style="@style/InputField.Border"
+            android:focusable="false"
             android:hint="Handoff"
             android:nextFocusDown="@+id/dateLabel"/>
 
