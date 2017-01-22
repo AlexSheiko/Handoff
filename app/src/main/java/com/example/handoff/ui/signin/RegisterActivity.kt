@@ -6,8 +6,8 @@ import android.view.View.VISIBLE
 import com.example.handoff.R
 import com.example.handoff.api.ServiceGenerator.authService
 import com.example.handoff.api.ServiceGenerator.userService
-import com.example.handoff.data.model.TokenRequest
 import com.example.handoff.data.model.User
+import com.example.handoff.data.model.helper.TokenRequest
 import com.example.handoff.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.enabled

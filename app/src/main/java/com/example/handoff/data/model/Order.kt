@@ -1,5 +1,6 @@
 package com.example.handoff.data.model
 
+import com.example.handoff.data.model.helper.Destination
 import com.google.gson.annotations.SerializedName
 
 data class Order(

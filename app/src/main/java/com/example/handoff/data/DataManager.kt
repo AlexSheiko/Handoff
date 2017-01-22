@@ -2,7 +2,7 @@ package com.example.handoff.data
 
 import com.example.handoff.api.ServiceGenerator.orderService
 import com.example.handoff.data.model.Order
-import com.example.handoff.data.model.Token
+import com.example.handoff.data.model.helper.Token
 import com.example.handoff.util.Extensions
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers.mainThread

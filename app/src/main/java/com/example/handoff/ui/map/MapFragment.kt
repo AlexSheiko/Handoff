@@ -16,8 +16,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.handoff.R
-import com.example.handoff.data.model.Destination
 import com.example.handoff.data.model.Order
+import com.example.handoff.data.model.helper.Destination
 import com.example.handoff.ui.base.BaseFragment
 import com.example.handoff.ui.order.AddOrderActivity
 import com.example.handoff.ui.order.DetailActivity

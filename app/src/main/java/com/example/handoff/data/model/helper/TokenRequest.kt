@@ -1,4 +1,4 @@
-package com.example.handoff.data.model
+package com.example.handoff.data.model.helper
 
 import com.example.handoff.util.Constants.PUBLIC_CLIENT
 import com.example.handoff.util.Constants.PUBLIC_GRANT

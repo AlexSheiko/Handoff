@@ -1,4 +1,4 @@
-package com.example.handoff.data.model
+package com.example.handoff.data.model.helper
 
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem

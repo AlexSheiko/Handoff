@@ -8,9 +8,9 @@ import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.util.TypedValue.applyDimension
 import android.widget.EditText
 import com.example.handoff.R
-import com.example.handoff.data.model.Token
-import com.example.handoff.data.model.TokenRequest
 import com.example.handoff.data.model.User
+import com.example.handoff.data.model.helper.Token
+import com.example.handoff.data.model.helper.TokenRequest
 import com.example.handoff.util.Constants.BEARER
 import com.example.handoff.util.Constants.KEY_TOKEN
 import com.example.handoff.util.Constants.USER_CLIENT

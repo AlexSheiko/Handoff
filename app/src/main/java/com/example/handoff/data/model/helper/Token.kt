@@ -1,4 +1,4 @@
-package com.example.handoff.data.model
+package com.example.handoff.data.model.helper
 
 data class Token(
         val token_type: String,

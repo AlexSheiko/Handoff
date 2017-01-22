@@ -1,6 +1,6 @@
 package com.example.handoff.api
 
-import com.example.handoff.data.model.OrdersResponse
+import com.example.handoff.data.model.helper.OrdersResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 import rx.Observable

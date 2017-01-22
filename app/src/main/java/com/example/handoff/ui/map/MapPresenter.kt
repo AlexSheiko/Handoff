@@ -3,7 +3,7 @@ package com.example.handoff.ui.map
 import com.appigo.todopro.ui.base.BasePresenter
 import com.example.handoff.data.DataManager
 import com.example.handoff.data.model.Order
-import com.example.handoff.data.model.Token
+import com.example.handoff.data.model.helper.Token
 
 class MapPresenter : BasePresenter<MapMvpView>() {
 
