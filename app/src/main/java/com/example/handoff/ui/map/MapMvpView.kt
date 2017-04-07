@@ -1,7 +1,7 @@
 package com.example.handoff.ui.map
 
-import com.appigo.todopro.ui.base.MvpView
 import com.example.handoff.data.model.Order
+import com.example.handoff.ui.base.MvpView
 import rx.Observable
 
 interface MapMvpView : MvpView {

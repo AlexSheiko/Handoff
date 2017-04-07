@@ -1,5 +1,6 @@
 package com.appigo.todopro.ui.base
 
+import com.example.handoff.ui.base.MvpView
 import com.example.handoff.util.Extensions
 
 /**
